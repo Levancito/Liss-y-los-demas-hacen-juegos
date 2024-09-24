@@ -25,7 +25,14 @@ namespace Builder
             renderer = GetComponent<Renderer>();
         }
 
- 
+        private void Update()
+        {
+            if (MaxHealth <= 0)
+            {
+                Destroy(gameObject);
+            }
+        }
+
     }
 
     public class EnemyBuilder
