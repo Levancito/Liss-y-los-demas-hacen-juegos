@@ -23,6 +23,7 @@ namespace Builder
 
                Enemy enemy =  new EnemyBuilder(prefab)
                     .SetPosition(new Vector3(Random.Range(0, 50), 0, Random.Range(0, 50)))
+                    //.SetPosition(Random.Range(0, 50), 0, Random.Range(0,50))
                     .SetScale(1 + level / 2f)
                     .SetMaxHealth(25 + level * 5)
                     .SetSpeed(2 + level / 3f)

@@ -8,8 +8,10 @@ namespace Builder
 {
     [RequireComponent(typeof(Renderer))]
     public class Enemy : MonoBehaviour
+        //a esto se le podria agregar 2 interfaces: IDamageable e IStats, una con los metodos de daño curacion y muerte y otra con los stats del enemigo
+        //como se generan con un spawner tambien se le puede asignar una IProduct que tenga el metodo que se ejecuta al instanciarlo
     {
-        public float MaxHealth;
+        public float MaxHealth;// estos dos pueden quedar declarados en IStats
         public float Speed;
 
         public Color Color
@@ -35,12 +37,12 @@ namespace Builder
 
     }
 
-    public class EnemyBuilder
+    public class EnemyBuilder //las cosas del builder deberian estar en una clase a parte que se encarge de buildear enemigos
     {
         private Enemy prefab;
         private float MaxHealth;
         private float Speed;
-        private Vector2 position;
+        private Vector3 position;
         private Quaternion rotation;
         private Bullet bullet;
         private Vector3 scale;
@@ -64,6 +66,7 @@ namespace Builder
             return instance;
         }
 
+        //a partir de aca no hace falta que sean funciones separadas, se puede definir el objeto de tipo enemy que pida todo esto y darselo en cada instancia
         public EnemyBuilder SetMaxHealth(float maxHealth)
         {
             this.MaxHealth = maxHealth;
@@ -99,7 +102,7 @@ namespace Builder
             return this;
         }
 
-        public EnemyBuilder SetScale(Vector3 scale)
+        public EnemyBuilder SetScale(Vector3 scale) 
         {
             this.scale = scale;
             return this;
@@ -110,5 +113,41 @@ namespace Builder
             this.scale = new Vector3(scale, scale, scale);
             return this;
         }
+
+        //------------------------------------------------------------------
+        //ej:
+        //-----Interfaces-----
+        // IStats -  trae HP, velocidad, escala etc.
+        // IDamageable:IStats - metodo para tomar daño y para morir
+        // IMovable:Istats - metodos para mover al bichito
+        // Enemy:Monobehaviour, IDamageable - Implementa todo lo de las interfaces. Agrega definicion de Enemy:
+        //
+        // public abstract class Enemy:Monobehaviour, IDamageable, IMovable
+        //{
+        //  Implementa Interfaces
+        //
+        //  public Enemy(int Health, Speed, Scale)
+        //  {
+        //      HP = Health
+        //      velocidad = Speed
+        //      escala = Scale
+        //  }
+        //
+        //  virtual void TakeDamage(int damage)
+        //  {
+        //      logica de daño
+        //  }
+        //  abstract void TodoLoQueNoSeUseAca(); --> Die etc si se quieren hacer especificos para cada enemigo
+        //}
+        //
+        //
+        //Subclase que hereda de enemigo:
+        //
+        //public class Ship:Enemy
+        //{
+        //  public Ship():base(Health, Speed, Scale) { } ----> en Health Speed Scale van los valores que se quieran asignar, se define dentro de la clase especifica
+        //
+        //  metodos especificos de esta clase (tipo die ponele, o si tiene algun comportamiento particular de esta clase)
+        //}
     }
 }
