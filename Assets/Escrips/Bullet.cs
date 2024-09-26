@@ -7,10 +7,10 @@ using UnityEngine;
 public class Bullet : MonoBehaviour, IProduct
 {
     public float speed = 10f;
-    public float damage = 5;
+    public float damage = 5f;
     public RemoteConfig remoteconfig;
 
-    public void Awake()
+    private void Awake()
     {
         remoteconfig = GetComponent<RemoteConfig>();
         damage = RemoteConfigService.Instance.appConfig.GetFloat("BulletDamage");
@@ -19,15 +19,15 @@ public class Bullet : MonoBehaviour, IProduct
     public void Initialize()
     {
         transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
-
     }
 
     private void Update()
     {
         transform.position += transform.right * speed * Time.deltaTime;
+
         if (Vector3.Distance(transform.position, Vector3.zero) > 100f)
         {
-            Destroy(gameObject);
+            ReturnToPool();
         }
     }
 
@@ -36,10 +36,25 @@ public class Bullet : MonoBehaviour, IProduct
         Enemy enemy = collision.gameObject.GetComponent<Enemy>();
         if (enemy != null)
         {
-            enemy.MaxHealth -= damage; 
+            enemy.MaxHealth -= damage;
+        }
+
+        ReturnToPool();
+    }
+
+    private void ReturnToPool()
+    {
+        Pool pool = FindObjectOfType<Pool>();
+        if (pool != null)
+        {
+            pool.ReturnBullet(this);
+        }
+        else
+        {
             Destroy(gameObject);
         }
     }
+
     public void UpdateDamage(float newDamage)
     {
         damage = newDamage;
