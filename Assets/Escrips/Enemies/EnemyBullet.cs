@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBullet : MonoBehaviour
+public class EnemyBullet : MonoBehaviour, IProduct
 {
     private float speed = 20f;
     private int damage = 10;
     private Rigidbody rb;
 
-    void Start()
+    public void Initialize()
     {
         rb = GetComponent<Rigidbody>();
         rb.velocity = transform.forward * -1f * speed;
@@ -25,5 +25,10 @@ public class EnemyBullet : MonoBehaviour
             }
             Destroy(gameObject);
         }
+    }
+
+    public void GetDirection()
+    {
+        Transform target = FindObjectOfType<Stats>().transform;
     }
 }

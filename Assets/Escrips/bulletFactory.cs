@@ -8,7 +8,7 @@ public class bulletFactory : Factory
 
     public override IProduct GetProduct(Vector3 position)
     {
-        IProduct obj = Instantiate(bulletPrefab, position, Quaternion.identity);
+        IProduct obj = Instantiate(bulletPrefab, position, transform.rotation);
         obj.Initialize();
         return obj;
     }
