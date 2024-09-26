@@ -172,8 +172,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   joystickController: {fileID: 917098704}
-  bulletFactory: {fileID: 1103927404}
   projectilePrefab: {fileID: 1618337350607507040, guid: a16c29364f7196846a3316bf91f65e3f, type: 3}
+  bulletFactory: {fileID: 1103927404}
   shootingPoint: {fileID: 783765283}
   shootInterval: 0.4
 --- !u!1 &122129011
@@ -650,7 +650,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba31a1545731aa54a817f8d7197a891c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 1618337350607507040, guid: a16c29364f7196846a3316bf91f65e3f, type: 3}
+  bulletPrefab: {fileID: -6448804128140570045, guid: a16c29364f7196846a3316bf91f65e3f, type: 3}
   bulletSpawnPoint: {fileID: 783765283}
   bulletSpeed: 35
 --- !u!4 &1103927405

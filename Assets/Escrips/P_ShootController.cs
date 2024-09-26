@@ -37,6 +37,6 @@ public class P_ShootController : MonoBehaviour
 
     private void Shoot(Vector3 direction)
     {
-        bulletFactory.CreateBullet(direction);
+        bulletFactory.GetProduct(direction);
     }
 }

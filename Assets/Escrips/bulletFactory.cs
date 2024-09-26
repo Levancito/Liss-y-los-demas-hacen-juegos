@@ -2,22 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class bulletFactory : MonoBehaviour
+public class bulletFactory : Factory
 {
-    public GameObject bulletPrefab;  
-    public Transform bulletSpawnPoint;  
-    public float bulletSpeed = 10f; 
+    [SerializeField] private Bullet bulletPrefab;
 
-    public GameObject CreateBullet(Vector3 direction)
+    public override IProduct GetProduct(Vector3 position)
     {
-        GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
-
-        Bullet bullet_S = bullet.GetComponent<Bullet>();
-        if (bullet_S != null)
-        {
-            bullet_S.speed = bulletSpeed;
-        }
-
-        return bullet;
+        IProduct obj = Instantiate(bulletPrefab, position, Quaternion.identity);
+        obj.Initialize();
+        return obj;
     }
 }
