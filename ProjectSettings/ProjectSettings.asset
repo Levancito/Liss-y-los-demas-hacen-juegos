@@ -818,7 +818,13 @@ PlayerSettings:
   XboxOneOverrideIdentityPublisher: 
   vrEditorSettings: {}
   cloudServicesEnabled:
+    Build: 0
+    Game Performance: 0
+    Legacy Analytics: 0
+    Purchasing: 0
+    UDP: 0
     UNet: 1
+    Unity Ads: 0
   luminIcon:
     m_Name: 
     m_ModelFolderPath: 
@@ -838,11 +844,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: 3b55986a-c9be-47ba-b7b0-b2a3dcb42737
+  cloudProjectId: 94664836-e2de-46df-8814-330b3b297890
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
   projectName: Aplicaciones de Motores II Juego
-  organizationId: slordkenosz
+  organizationId: lfv-aplicacion-de-motores-ii
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}

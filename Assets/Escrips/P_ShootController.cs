@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Services.RemoteConfig;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -9,8 +10,10 @@ public class P_ShootController : MonoBehaviour
     public bulletFactory bulletFactory;
     public GameObject projectilePrefab;
     public Transform shootingPoint;
+
     public float shootInterval = 0.1f;  
-    private float shootTimer = 0f;  
+    private float shootTimer = 0f;
+
 
     private void Update()
     {
@@ -33,6 +36,10 @@ public class P_ShootController : MonoBehaviour
             }
         }
 
+    }
+    public void UpdateShootInterval(float newInterval)
+    {
+        shootInterval = newInterval;
     }
 
     private void Shoot(Vector3 direction)

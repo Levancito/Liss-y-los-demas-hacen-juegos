@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Services.RemoteConfig;
 using Unity.VisualScripting;
 using UnityEditor.Search;
 using UnityEngine;
@@ -13,7 +14,6 @@ namespace Builder
     {
         public float MaxHealth;// estos dos pueden quedar declarados en IStats
         public float Speed;
-
         public Color Color
         {
             get => renderer.material.color; 
@@ -31,10 +31,24 @@ namespace Builder
         {
             if (MaxHealth <= 0)
             {
-                Destroy(gameObject);
+                Die();
             }
         }
 
+        public void TakeDamage(int damage)
+        {
+            MaxHealth -= damage;
+        }
+
+        public void UpdateMaxHealth(float newMaxHealth)
+        {
+            MaxHealth = newMaxHealth;
+        }
+
+        private void Die()
+        {
+            Destroy(gameObject);
+        }
     }
 
     public class EnemyBuilder //las cosas del builder deberian estar en una clase a parte que se encarge de buildear enemigos

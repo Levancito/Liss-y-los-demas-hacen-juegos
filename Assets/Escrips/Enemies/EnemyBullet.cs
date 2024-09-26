@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyBullet : MonoBehaviour, IProduct
 {
     private float speed = 20f;
-    private int damage = 10;
+    public int damage = 10;
     private Rigidbody rb;
 
     public void Initialize()
@@ -25,6 +25,11 @@ public class EnemyBullet : MonoBehaviour, IProduct
             }
             Destroy(gameObject);
         }
+    }
+
+    public void UpdateDamage(int newDamage)
+    {
+        damage = newDamage;
     }
 
     public void GetDirection()

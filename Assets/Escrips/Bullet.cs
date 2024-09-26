@@ -1,12 +1,20 @@
 using Builder;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Services.RemoteConfig;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour, IProduct
 {
     public float speed = 10f;
     public float damage = 5;
+    public RemoteConfig remoteconfig;
+
+    public void Awake()
+    {
+        remoteconfig = GetComponent<RemoteConfig>();
+        damage = RemoteConfigService.Instance.appConfig.GetFloat("BulletDamage");
+    }
 
     public void Initialize()
     {
@@ -32,6 +40,8 @@ public class Bullet : MonoBehaviour, IProduct
             Destroy(gameObject);
         }
     }
-
-   
+    public void UpdateDamage(float newDamage)
+    {
+        damage = newDamage;
+    }
 }
