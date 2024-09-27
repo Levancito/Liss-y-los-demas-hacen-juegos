@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class Stats : MonoBehaviour, IDamageable
 {
+    private SceneController sceneController;
     public int MaxHP { get; set; }
     public int HP { get; set; }
 
     public void Start()
     {
+        sceneController = FindObjectOfType<SceneController>();
         MaxHP = 100;
         HP = MaxHP;
     }
@@ -30,8 +32,7 @@ public class Stats : MonoBehaviour, IDamageable
     public virtual void Die()
     {
         Destroy(gameObject);
-        //cualquier otra logica de GameOver tipo pantalla etc
-        //probablemente es mejor deshabilitar todo lo que sea player en vez de destruirlo de una
+        sceneController.Perdiste();
         Time.timeScale = 0;
     }
 }

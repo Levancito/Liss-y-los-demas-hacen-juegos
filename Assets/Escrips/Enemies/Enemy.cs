@@ -1,10 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.Services.RemoteConfig;
-using Unity.VisualScripting;
-using UnityEditor.Search;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 [RequireComponent(typeof(Renderer))]
 public class Enemy : MonoBehaviour, IDamageable, IMovable
@@ -24,17 +18,17 @@ public class Enemy : MonoBehaviour, IDamageable, IMovable
         MaxHP = health;
         Speed = speed;
         Escala = scale;
-        HP = health; 
+        HP = health;
     }
-    
+
 
     protected virtual void Awake()
     {
-        
+
         UpdateMaxHealth(MaxHP);
         if (HP == 0)
         {
-            HP = MaxHP; 
+            HP = MaxHP;
         }
     }
 
@@ -57,7 +51,7 @@ public class Enemy : MonoBehaviour, IDamageable, IMovable
     {
         WinCondition winCondition = FindAnyObjectByType<WinCondition>();
         winCondition.WinAdd();
-        Destroy(gameObject); 
+        Destroy(gameObject);
     }
 
     public virtual void Move()
