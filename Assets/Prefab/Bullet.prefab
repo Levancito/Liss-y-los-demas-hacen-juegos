@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8478472502489765769}
   - component: {fileID: 8278018184284375876}
   - component: {fileID: -6448804128140570045}
+  - component: {fileID: 2570691945101476230}
   - component: {fileID: 318588864617908801}
   - component: {fileID: -8634311618435842610}
   m_Layer: 0
@@ -100,6 +101,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 50
   damage: 5
+  lifetime: 3
+  currentlifetime: 0
+  remoteconfig: {fileID: 0}
+--- !u!114 &2570691945101476230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1618337350607507040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa7e7f305f958e14ebd026fc477029ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!65 &318588864617908801
 BoxCollider:
   m_ObjectHideFlags: 0

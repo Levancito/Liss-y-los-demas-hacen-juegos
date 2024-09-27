@@ -8,6 +8,8 @@ public class Bullet : MonoBehaviour, IProduct
 {
     public float speed = 10f;
     public int damage = 5;
+    public float lifetime;
+    public float currentlifetime;
     public RemoteConfig remoteconfig;
 
     private void Awake()
@@ -16,6 +18,10 @@ public class Bullet : MonoBehaviour, IProduct
         damage = RemoteConfigService.Instance.appConfig.GetInt("BulletDamage");
     }
 
+    public void OnEnable()
+    {
+        currentlifetime = lifetime;
+    }
     public void Initialize()
     {
         transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
@@ -25,10 +31,14 @@ public class Bullet : MonoBehaviour, IProduct
     {
         transform.position += transform.right * speed * Time.deltaTime;
 
-        if (Vector3.Distance(transform.position, Vector3.zero) > 100f)
+        currentlifetime -= Time.deltaTime;
+
+        if(currentlifetime <= 0)
         {
-            ReturnToPool();
+            Release();
+
         }
+
     }
 
     public void OnCollisionEnter(Collision collision)
@@ -36,24 +46,17 @@ public class Bullet : MonoBehaviour, IProduct
         Enemy enemy = collision.gameObject.GetComponent<Enemy>();
         if (enemy != null)
         {
-            enemy.MaxHP -= damage;
+            enemy.HP -= damage;
+            Release();
         }
 
-        ReturnToPool();
     }
 
-    private void ReturnToPool()
+    void Release()
     {
-        Pool pool = FindObjectOfType<Pool>();
-        if (pool != null)
-        {
-            pool.ReturnBullet(this);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        GetComponent<PooledObject>().Release();
     }
+
     public void UpdateDamage(int newDamage)
     {
         damage = newDamage;
