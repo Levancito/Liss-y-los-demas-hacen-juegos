@@ -7,13 +7,13 @@ using UnityEngine;
 public class Bullet : MonoBehaviour, IProduct
 {
     public float speed = 10f;
-    public float damage = 5;
+    public int damage = 5;
     public RemoteConfig remoteconfig;
 
     public void Awake()
     {
         remoteconfig = GetComponent<RemoteConfig>();
-        damage = RemoteConfigService.Instance.appConfig.GetFloat("BulletDamage");
+        damage = RemoteConfigService.Instance.appConfig.GetInt("BulletDamage");
     }
 
     public void Initialize()
@@ -36,11 +36,11 @@ public class Bullet : MonoBehaviour, IProduct
         Enemy enemy = collision.gameObject.GetComponent<Enemy>();
         if (enemy != null)
         {
-            enemy.MaxHealth -= damage; 
+            enemy.MaxHP -= damage; 
             Destroy(gameObject);
         }
     }
-    public void UpdateDamage(float newDamage)
+    public void UpdateDamage(int newDamage)
     {
         damage = newDamage;
     }

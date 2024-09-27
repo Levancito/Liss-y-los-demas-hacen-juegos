@@ -11,9 +11,9 @@ public class RemoteConfig : MonoBehaviour
     public struct userAttributes { }
     public struct appAttributes { }
 
-    public float BulletDamage = 5;
+    public int BulletDamage = 5;
     public int EnemyDamage = 10;
-    public float EnemyLife = 50;
+    public int EnemyLife = 50;
     public float PlayerSpeed = 0.5f;
     public float ShootInterval = 0.4f;
 
@@ -43,9 +43,9 @@ public class RemoteConfig : MonoBehaviour
     {
         Debug.Log("RemoteConfigService.Instance.appConfig fetched: " + RemoteConfigService.Instance.appConfig.config.ToString());
 
-        BulletDamage = RemoteConfigService.Instance.appConfig.GetFloat("BulletDamage");
+        BulletDamage = RemoteConfigService.Instance.appConfig.GetInt("BulletDamage");
         EnemyDamage = RemoteConfigService.Instance.appConfig.GetInt("EnemyDamage");
-        EnemyLife = RemoteConfigService.Instance.appConfig.GetFloat("EnemyLife");
+        EnemyLife = RemoteConfigService.Instance.appConfig.GetInt("EnemyLife");
         PlayerSpeed = RemoteConfigService.Instance.appConfig.GetFloat("PlayerSpeed");
         ShootInterval = RemoteConfigService.Instance.appConfig.GetFloat("ShootInterval");
         NotifyControllers(); 
