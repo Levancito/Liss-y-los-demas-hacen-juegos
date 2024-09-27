@@ -55,8 +55,9 @@ public class Enemy : MonoBehaviour, IDamageable, IMovable
 
     public virtual void Die()
     {
-        WinCondition winCondition = FindAnyObjectByType<WinCondition>();
-        winCondition.WinAdd();
+        //WinCondition winCondition = FindAnyObjectByType<WinCondition>();
+        //winCondition.WinAdd();
+        EventManager.TriggerEvent(EventsType.Event_EnemyDestroyed, this);
         Destroy(gameObject); 
     }
 

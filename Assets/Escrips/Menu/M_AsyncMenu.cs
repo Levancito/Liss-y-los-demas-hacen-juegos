@@ -9,6 +9,7 @@ public class M_AsyncMenu : MonoBehaviour
 
     public void CargarNivel(int NumeroDeEscena)
     {
+        Time.timeScale = 1;
         StartCoroutine(CargarAsync(NumeroDeEscena));
     }
     IEnumerator CargarAsync(int NumeroDeEscena)
