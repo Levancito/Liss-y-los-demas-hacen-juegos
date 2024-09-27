@@ -7,6 +7,7 @@ namespace Builder
         private T prefab;
         private int MaxHP;
         private float Speed;
+        private int HP;
         private Vector3 position;
         private Quaternion rotation;
         private Vector3 scale;
@@ -14,7 +15,7 @@ namespace Builder
         public EnemyBuilder(T prefab)
         {
             this.prefab = prefab;
-            MaxHP = 16;
+            MaxHP = 15;
             Speed = 5;
             position = Vector3.zero;
             rotation = Quaternion.identity;
@@ -22,7 +23,7 @@ namespace Builder
         }
 
         // Método unificado para construir un enemigo con todos los parámetros
-        public T Build(int MaxHP = 16, float speed = 5, Vector3? position = null, Quaternion? rotation = null, Vector3? scale = null)
+        public T Build(int MaxHP = 15, float speed = 5, Vector3? position = null, Quaternion? rotation = null, Vector3? scale = null)
         {
             this.MaxHP = MaxHP;
             this.Speed = speed;
@@ -34,6 +35,7 @@ namespace Builder
             instance.transform.localScale = this.scale;
             instance.MaxHP = this.MaxHP;
             instance.Speed = this.Speed;
+            instance.HP = this.MaxHP;
             return instance;
         }
     }

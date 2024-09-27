@@ -28,21 +28,20 @@ public class Ship : Enemy
         if (player == null)
         {
             player = GameObject.FindWithTag("Player"); // Buscar al jugador por tag
-            if (player == null)
-            {
-                Debug.LogError("El jugador no fue encontrado en la escena.");
-            }
         }
     }
-
+    protected override void Awake()
+    {
+        base.Awake();
+        if (HP == 0)
+        {
+            HP = MaxHP;
+        }
+    }
     private void FixedUpdate()
     {
+        Debug.Log(HP);
         Move();
-    }
-
-    public override void TakeDamage(int amount)
-    {
-        base.TakeDamage(amount);
     }
 
     public override void Die()

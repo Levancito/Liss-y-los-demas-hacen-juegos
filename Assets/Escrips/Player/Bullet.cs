@@ -15,7 +15,10 @@ public class Bullet : MonoBehaviour, IProduct
     private void Awake()
     {
         remoteconfig = GetComponent<RemoteConfig>();
-        damage = RemoteConfigService.Instance.appConfig.GetInt("BulletDamage");
+        if (remoteconfig != null)
+        {
+            damage = RemoteConfigService.Instance.appConfig.GetInt("BulletDamage", damage);
+        }
     }
 
     public void OnEnable()
@@ -40,16 +43,20 @@ public class Bullet : MonoBehaviour, IProduct
         }
 
     }
-
+    public void UpdateDamage(int newDamage)
+    {
+        damage = newDamage;
+    }
     public void OnCollisionEnter(Collision collision)
     {
         Enemy enemy = collision.gameObject.GetComponent<Enemy>();
+
         if (enemy != null)
         {
-            enemy.HP -= damage;
+            Debug.Log($"Disparo impactó al enemigo y le hace {damage} de daño.");
+            enemy.TakeDamage(damage); 
             Release();
         }
-
     }
 
     void Release()
@@ -57,8 +64,5 @@ public class Bullet : MonoBehaviour, IProduct
         GetComponent<PooledObject>().Release();
     }
 
-    public void UpdateDamage(int newDamage)
-    {
-        damage = newDamage;
-    }
+    
 }

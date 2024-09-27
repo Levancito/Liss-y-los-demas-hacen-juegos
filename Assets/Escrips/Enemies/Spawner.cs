@@ -21,7 +21,6 @@ namespace Builder
         {
             if (player == null)
             {
-                Debug.LogError("El jugador no está asignado en el Inspector.");
                 return;
             }
 
@@ -31,7 +30,7 @@ namespace Builder
 
                 Ship ship = new EnemyBuilder<Ship>(shipPrefab)
                     .Build(
-                        MaxHP: 25 + Level * 5,              // Salud máxima
+                        MaxHP: 5 + Level,              // Salud máxima
                         speed: 2 + Level / 3f,                  // Velocidad
                         position: randomPosition,                 // Posición aleatoria
                         rotation: Quaternion.identity,            // Rotación por defecto
@@ -45,7 +44,7 @@ namespace Builder
 
                 Plane plane = new EnemyBuilder<Plane>(planePrefab)
                     .Build(
-                        MaxHP: 15 + Level * 5,              // Salud máxima
+                        MaxHP: 15 + Level,              // Salud máxima
                         speed: 4 + Level / 3f,                  // Velocidad
                         position: randomPosition,                 // Posición aleatoria
                         rotation: Quaternion.identity,            // Rotación por defecto

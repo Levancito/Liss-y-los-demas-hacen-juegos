@@ -408,7 +408,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initPoolSize: 20
   objectToPool: {fileID: 2570691945101476230, guid: a16c29364f7196846a3316bf91f65e3f, type: 3}
-  bulletFactory: {fileID: 0}
+  bulletFactory: {fileID: 1103927406}
 --- !u!1 &599497061
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,7 +15,7 @@ public class Enemy : MonoBehaviour, IDamageable, IMovable
     public float Position { get; set; }
     public float Rotation { get; set; }
     public float Dmg { get; set; }
-    public int HP { get; set; }
+    [SerializeField] public int HP { get; set; }
 
     public Enemy(int health, float speed, float scale)
     {
@@ -24,14 +24,25 @@ public class Enemy : MonoBehaviour, IDamageable, IMovable
         Escala = scale;
         HP = health; 
     }
+    
 
     protected virtual void Awake()
     {
-        HP = MaxHP; 
+        UpdateMaxHealth(MaxHP);
+        if (HP == 0)
+        {
+            HP = MaxHP; 
+        }
     }
 
+    public void UpdateMaxHealth(int newMaxHealth)
+    {
+        MaxHP = newMaxHealth;
+        HP = MaxHP;
+    }
     public virtual void TakeDamage(int damage)
     {
+        Debug.Log("tomo daño" + damage);
         HP -= damage;
         if (HP <= 0)
         {
@@ -48,12 +59,6 @@ public class Enemy : MonoBehaviour, IDamageable, IMovable
     {
         transform.Translate(Vector3.back * Speed * Time.deltaTime);
     }
-
-    public void UpdateMaxHealth(int newMaxHealth)
-    {
-        MaxHP = newMaxHealth;
-    }
-
     public virtual void Heal(int amount)
     {
         HP += amount;

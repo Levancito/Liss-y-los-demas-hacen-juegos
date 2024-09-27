@@ -18,28 +18,28 @@ public class Plane : Enemy
         Escala = scale;
         HP = health; 
     }
-
     private void Start()
     {
         this.movementSpeed = Speed;
         if (player == null)
         {
             player = GameObject.FindWithTag("Player"); // Buscar al jugador por tag
-            if (player == null)
-            {
-                Debug.LogError("El jugador no fue encontrado en la escena.");
-            }
         }
     }
 
     private void FixedUpdate()
     {
+        Debug.Log("EL AVION TIENE " + HP);
         Move();
     }
 
-    public override void TakeDamage(int amount)
+    public override void TakeDamage(int damage)
     {
-        base.TakeDamage(amount);
+        HP -= damage;
+        if (HP <= 0)
+        {
+            Die();
+        }
     }
 
     public override void Die()

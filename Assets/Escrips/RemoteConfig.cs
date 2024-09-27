@@ -13,7 +13,7 @@ public class RemoteConfig : MonoBehaviour
 
     public int BulletDamage = 5;
     public int EnemyDamage = 10;
-    public int EnemyLife = 50;
+    public int EnemyLife = 15;
     public float PlayerSpeed = 0.5f;
     public float ShootInterval = 0.4f;
 
