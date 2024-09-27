@@ -69,7 +69,7 @@ public class RemoteConfig : MonoBehaviour
         EnemyBullet[] enemyBullets = FindObjectsOfType<EnemyBullet>();
         foreach (var bullet in enemyBullets)
         {
-            bullet.UpdateDamage(EnemyDamage);
+            //bullet.UpdateDamage(EnemyDamage);
         }
         //Vida Enemigo
         Enemy[] enemies = FindObjectsOfType<Enemy>();

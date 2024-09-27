@@ -8,7 +8,7 @@ public class P_Crontrol : MonoBehaviour
 {
     [SerializeField] P_Controller _controller;
     [SerializeField] public float _speed = 0.5f;
-    [SerializeField] float _max = 0.1f;
+    [SerializeField] float _max = 0.1f ;
 
     private Camera _camera;
     private float _screenWidth;

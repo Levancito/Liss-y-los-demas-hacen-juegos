@@ -14,11 +14,6 @@ public class P_ShootController : MonoBehaviour
 
     private void Update()
     {
-        if (joystickController == null)
-        {
-            Debug.LogError("JoystickController no está asignado.");
-            return;
-        }
 
         Vector2 moveDir = joystickController.MoveDir;
 

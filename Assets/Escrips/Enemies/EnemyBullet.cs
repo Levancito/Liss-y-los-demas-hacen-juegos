@@ -2,16 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBullet : MonoBehaviour, IProduct
+public class EnemyBullet : MonoBehaviour
 {
     private float speed = 20f;
     public int damage = 10;
     private Rigidbody rb;
 
-    public void Initialize()
+    public void Awake()
     {
+        
         rb = GetComponent<Rigidbody>();
-        rb.velocity = transform.forward * -1f * speed;
+        rb.velocity = transform.forward *  speed;
+        
     }
 
     void OnTriggerEnter(Collider other)
@@ -23,7 +25,7 @@ public class EnemyBullet : MonoBehaviour, IProduct
             {
                 damageable.TakeDamage(damage);
             }
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
 

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Stats : MonoBehaviour, IDamageable
 {
-    public int MaxHP {  get; set; }
-    public int HP {  get; set; }
+    public int MaxHP { get; set; }
+    public int HP { get; set; }
 
     public void Start()
     {

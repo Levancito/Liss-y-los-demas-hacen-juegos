@@ -27,7 +27,7 @@ public class P_JoystickController : P_Controller, IDragHandler, IEndDragHandler
     {
         Vector3 moveDir = Vector3.ClampMagnitude((Vector3)eventData.position - _initialPosition, _maxmagnitude);
         transform.position = _initialPosition + moveDir;
-        MoveDir = new Vector2(moveDir.x, moveDir.y); 
+        MoveDir = new Vector2(moveDir.x, moveDir.y);
     }
 
     public void OnEndDrag(PointerEventData eventData)
