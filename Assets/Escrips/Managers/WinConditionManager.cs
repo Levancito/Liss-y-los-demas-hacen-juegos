@@ -5,7 +5,7 @@ using UnityEngine;
 public class WinConditionManager : MonoBehaviour
 {
     private int _enemyAmountIndex = 0;
-    private int _requiredKills = 10;
+    private int _requiredKills = 1;
 
     private void Awake()
     {
