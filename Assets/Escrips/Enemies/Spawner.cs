@@ -31,7 +31,7 @@ namespace Builder
                 Ship ship = new EnemyBuilder<Ship>(shipPrefab)
                     .Build(
                         MaxHP: 5 + Level,              // Salud máxima
-                        speed: 2 + Level / 3f,                  // Velocidad
+                        speed: Random.Range(1,4),                  // Velocidad
                         position: randomPosition,                 // Posición aleatoria
                         rotation: Quaternion.identity,            // Rotación por defecto
                         scale: Vector3.one * (1 + Level / 2f)   // Escala basada en el nivel

@@ -1594,7 +1594,7 @@ GameObject:
   - component: {fileID: 1003657916}
   - component: {fileID: 1003657915}
   m_Layer: 0
-  m_Name: ManagerXD
+  m_Name: Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

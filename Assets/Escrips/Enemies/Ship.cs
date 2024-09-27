@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class Ship : Enemy
 {
+    private GameObject player;
 
     [SerializeField]
-    private GameObject player; 
+    private float movementSpeed = 4f;
     [SerializeField]
-    private float movementSpeed; 
+    private float Amplitud = 5f; 
     [SerializeField]
-    private float oscillationAmplitude = 1f;
-    [SerializeField]
-    private float oscillationFrequency = 2f;
+    private float descentSpeed;
 
-    public Ship(int health, float speed, float scale) : base(health, speed, scale) 
+    private Vector3 initialPosition; 
+    private float angle; 
+
+    public Ship(int health, float speed, float scale) : base(health, speed, scale)
     {
         MaxHP = health;
         Speed = speed;
@@ -24,23 +26,16 @@ public class Ship : Enemy
 
     private void Start()
     {
-        this.movementSpeed = Speed;
+        movementSpeed = Speed;
+        initialPosition = transform.position; 
         if (player == null)
         {
-            player = GameObject.FindWithTag("Player"); // Buscar al jugador por tag
+            player = GameObject.FindWithTag("Player"); 
         }
     }
-    protected override void Awake()
-    {
-        base.Awake();
-        if (HP == 0)
-        {
-            HP = MaxHP;
-        }
-    }
+
     private void FixedUpdate()
     {
-        //Debug.Log(HP);
         Move();
     }
 
@@ -54,14 +49,22 @@ public class Ship : Enemy
     {
         if (player == null) return;
 
-        // Calcular la oscilación en el eje X
-        float oscillation = Mathf.Sin(Time.time * oscillationFrequency) * oscillationAmplitude;
+        angle += movementSpeed * Time.deltaTime;
 
-        // Calcular la posición deseada en el eje X (donde está el jugador)
-        float desiredXPosition = player.transform.position.x + oscillation;
+        float offsetX = Mathf.Sin(angle) * Amplitud;
 
-        // Mover la nave hacia la posición deseada
-        Vector3 targetPosition = new Vector3(desiredXPosition, transform.position.y, transform.position.z);
-        transform.position = Vector3.MoveTowards(transform.position, targetPosition, movementSpeed * Time.deltaTime);
+        float newZ = transform.position.z - descentSpeed * Time.deltaTime;
+
+        Vector3 targetPosition = (initialPosition + player.transform.position) / 2;
+
+        transform.position = new Vector3(
+            targetPosition.x + offsetX,
+            transform.position.y,
+            newZ
+        );
     }
 }
+
+
+
+
