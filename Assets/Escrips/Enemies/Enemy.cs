@@ -17,6 +17,8 @@ public class Enemy : MonoBehaviour, IDamageable, IMovable
     public float Dmg { get; set; }
     [SerializeField] public int HP { get; set; }
 
+    //private WinCondition winCondition;
+
     public Enemy(int health, float speed, float scale)
     {
         MaxHP = health;
@@ -28,6 +30,7 @@ public class Enemy : MonoBehaviour, IDamageable, IMovable
 
     protected virtual void Awake()
     {
+        
         UpdateMaxHealth(MaxHP);
         if (HP == 0)
         {
@@ -52,6 +55,8 @@ public class Enemy : MonoBehaviour, IDamageable, IMovable
 
     public virtual void Die()
     {
+        WinCondition winCondition = FindAnyObjectByType<WinCondition>();
+        winCondition.WinAdd();
         Destroy(gameObject); 
     }
 
