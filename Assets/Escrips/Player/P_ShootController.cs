@@ -35,6 +35,6 @@ public class P_ShootController : MonoBehaviour
 
     private void Shoot(Vector3 position)
     {
-        _pool.GetPooledObject(position);
+        _pool.GetPooledObject(position, shootingpos.rotation);
     }
 }

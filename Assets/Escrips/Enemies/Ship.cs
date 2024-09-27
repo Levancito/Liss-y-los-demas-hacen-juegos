@@ -40,7 +40,7 @@ public class Ship : Enemy
     }
     private void FixedUpdate()
     {
-        Debug.Log(HP);
+        //Debug.Log(HP);
         Move();
     }
 
