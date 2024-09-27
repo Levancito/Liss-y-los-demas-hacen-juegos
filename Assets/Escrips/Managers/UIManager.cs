@@ -15,10 +15,14 @@ public class UIManager : MonoBehaviour
 
     public void ShowVictoryScreen(object[] p)
     {
+        EventManager.UnsubscribeToEvent(EventsType.Event_Victory, ShowVictoryScreen);
+        EventManager.UnsubscribeToEvent(EventsType.Event_Defeat, ShowDefeatScreen);
         _victoryScreen.SetActive(true);
     }
     public void ShowDefeatScreen(object[] p)
     {
+        EventManager.UnsubscribeToEvent(EventsType.Event_Victory, ShowVictoryScreen);
+        EventManager.UnsubscribeToEvent(EventsType.Event_Defeat, ShowDefeatScreen);
         _defeatScreen.SetActive(true);
     }
 }

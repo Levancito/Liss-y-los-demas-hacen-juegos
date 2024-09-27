@@ -5,7 +5,7 @@ using UnityEngine;
 public class WinConditionManager : MonoBehaviour
 {
     private int _enemyAmountIndex = 0;
-    private int _requiredKills = 1;
+    private int _requiredKills = 5;
 
     private void Awake()
     {
@@ -25,11 +25,16 @@ public class WinConditionManager : MonoBehaviour
     void Victory(object[] p)
     {
         //aca van las acciones que se triggerean cuando se gana
+        EventManager.UnsubscribeToEvent(EventsType.Event_EnemyDestroyed, onEnemyDestroyed);
+        EventManager.UnsubscribeToEvent(EventsType.Event_Victory, Victory);
+        EventManager.UnsubscribeToEvent(EventsType.Event_Defeat, Defeat);
         Time.timeScale = 0;
     }
     void Defeat(object[] p)
     {
-
+        EventManager.UnsubscribeToEvent(EventsType.Event_EnemyDestroyed, onEnemyDestroyed);
+        EventManager.UnsubscribeToEvent(EventsType.Event_Victory, Victory);
+        EventManager.UnsubscribeToEvent(EventsType.Event_Defeat, Defeat);
         Time.timeScale = 0;
     }
 }

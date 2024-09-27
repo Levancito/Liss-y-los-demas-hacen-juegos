@@ -34,7 +34,7 @@ public class Stats : MonoBehaviour, IDamageable
     public virtual void Die()
     {
         EventManager.TriggerEvent(EventsType.Event_Defeat, this);
-        Destroy(gameObject);
+        //Destroy(gameObject);
         //cualquier otra logica de GameOver tipo pantalla etc
         //probablemente es mejor deshabilitar todo lo que sea player en vez de destruirlo de una
     }
