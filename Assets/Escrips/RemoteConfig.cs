@@ -16,6 +16,7 @@ public class RemoteConfig : MonoBehaviour
     public int EnemyLife = 15;
     public float PlayerSpeed = 0.5f;
     public float ShootInterval = 0.4f;
+    public string Comentario = "";
 
     async Task InitializeRemoteConfigAsync()
     {
@@ -48,6 +49,7 @@ public class RemoteConfig : MonoBehaviour
         EnemyLife = RemoteConfigService.Instance.appConfig.GetInt("EnemyLife");
         PlayerSpeed = RemoteConfigService.Instance.appConfig.GetFloat("PlayerSpeed");
         ShootInterval = RemoteConfigService.Instance.appConfig.GetFloat("ShootInterval");
+        Comentario = RemoteConfigService.Instance.appConfig.GetString("Comentario");
         NotifyControllers(); 
     }
 
@@ -69,7 +71,7 @@ public class RemoteConfig : MonoBehaviour
         EnemyBullet[] enemyBullets = FindObjectsOfType<EnemyBullet>();
         foreach (var bullet in enemyBullets)
         {
-            //bullet.UpdateDamage(EnemyDamage);
+            bullet.UpdateDamage(EnemyDamage);
         }
         //Vida Enemigo
         Enemy[] enemies = FindObjectsOfType<Enemy>();
@@ -83,6 +85,12 @@ public class RemoteConfig : MonoBehaviour
         foreach (var bullet in bullets)
         {
             bullet.UpdateDamage(BulletDamage);
+        }
+        MenuManager[] menu = FindObjectsOfType<MenuManager>();
+        foreach (var menuManager in menu)
+        {
+            menuManager.UpdateComentary(Comentario);
+            Debug.Log(Comentario);
         }
     }
 }

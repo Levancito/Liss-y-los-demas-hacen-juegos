@@ -12,6 +12,22 @@ public class Plane : Enemy
     [SerializeField]
     private int damage;
 
+    public float forwardBoundary = 5f;
+    public float backwardBoundary = -5f;
+
+
+    private void Update()
+    {
+        if (transform.position.z < backwardBoundary)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, forwardBoundary);
+        }
+        else if (transform.position.z > forwardBoundary)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, backwardBoundary);
+        }
+    }
+
     public Plane(int health, float speed, float scale) : base(health, speed, scale)
     {
         MaxHP = health;

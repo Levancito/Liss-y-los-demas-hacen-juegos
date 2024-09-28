@@ -115,6 +115,8 @@ MonoBehaviour:
   player: {fileID: 0}
   movementSpeed: 0
   damage: 5
+  forwardBoundary: 45
+  backwardBoundary: -50
 --- !u!54 &8920830032357177067
 Rigidbody:
   m_ObjectHideFlags: 0
