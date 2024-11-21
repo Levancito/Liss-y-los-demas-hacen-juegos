@@ -8,7 +8,7 @@ public class P_ShootController : MonoBehaviour
 {
     [SerializeField] private Pool _pool;
     public P_JoystickController joystickController;
-    public float shootInterval = 0.1f;
+    public float shootInterval = 0.4f;
     private float shootTimer = 0f;
     public Transform shootingpos;
 

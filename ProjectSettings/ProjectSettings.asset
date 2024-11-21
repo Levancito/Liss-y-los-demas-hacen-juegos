@@ -754,7 +754,8 @@ PlayerSettings:
   webGLMemoryGeometricGrowthStep: 0.2
   webGLMemoryGeometricGrowthCap: 96
   webGLPowerPreference: 2
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    Standalone: LEVELPLAY_DEPENDENCIES_INSTALLED
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}
@@ -868,10 +869,10 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: 94664836-e2de-46df-8814-330b3b297890
+  cloudProjectId: 08739593-090f-462c-bccf-7ef4bb55be09
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Aplicaciones de Motores II Juego
+  projectName: Space Cowboy
   organizationId: lfv-aplicacion-de-motores-ii
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0

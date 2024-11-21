@@ -55,13 +55,13 @@ public class RemoteConfig : MonoBehaviour
 
     private void NotifyControllers()
     {
-        // Velicidad de Disparo
+        // Velicidad de Disparo - no anda
         P_ShootController[] shootControllers = FindObjectsOfType<P_ShootController>();
         foreach (var controller in shootControllers)
         {
             controller.UpdateShootInterval(ShootInterval);
         }
-        // Velocidad del Jugador
+        // Velocidad del Jugador - no anda
         P_Crontrol[] playerControls = FindObjectsOfType<P_Crontrol>();
         foreach (var control in playerControls)
         {
