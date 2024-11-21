@@ -1,3 +1,4 @@
+using Builder;
 using System.Collections;
 using System.Collections.Generic;
 using System.Resources;
@@ -6,20 +7,27 @@ using UnityEngine;
 
 public class Currency : MonoBehaviour, IResource
 {
-    public float MoveSpeed { get; set; }
+    public float _MoveSpeed { get; set; }
+    public float _LifeSpan { get; set; }
 
     [SerializeField] private ResourceManager resourceManager;
-
     [SerializeField] private int Speed;
+    private int LifeSpan = 30;
+
 
     private void Awake()
     {
+        Speed = Random.Range(Speed, Speed + 2);
         resourceManager = FindObjectOfType<ResourceManager>();
-        MoveSpeed = Speed;
+        _MoveSpeed = Speed;
+        _LifeSpan = LifeSpan * Speed;
+
+        StartCoroutine(DestroyAfterLifeSpan());
     }
+
     public virtual void Move()
     {
-        transform.position += Vector3.back * MoveSpeed * Time.deltaTime;
+        transform.position += Vector3.back * _MoveSpeed * Time.deltaTime;
     }
 
     private void FixedUpdate()
@@ -29,8 +37,9 @@ public class Currency : MonoBehaviour, IResource
 
     private void OnCollisionEnter(Collision collision)
     {
-        P_Controller pControl = collision.gameObject.GetComponent<P_Controller>();
-        if (pControl != null) 
+        P_ShootController Player = collision.gameObject.GetComponent<P_ShootController>();
+
+        if (Player != null)
         {
             if (resourceManager != null)
             {
@@ -44,5 +53,13 @@ public class Currency : MonoBehaviour, IResource
             }
         }
     }
+
+    private IEnumerator DestroyAfterLifeSpan()
+    {
+        yield return new WaitForSeconds(LifeSpan);
+        Debug.Log("Objeto destruido por alcanzar su tiempo de vida.");
+        Destroy(gameObject);
+    }
 }
+
 

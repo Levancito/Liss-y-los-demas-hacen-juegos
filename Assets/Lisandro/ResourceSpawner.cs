@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-using UnityEngine;
 using UnityEngine.UIElements;
 
 public class ResourceSpawner : MonoBehaviour
@@ -19,7 +17,6 @@ public class ResourceSpawner : MonoBehaviour
 
     [Header("Tuercas Settings")]
     [SerializeField] private GameObject tuercasPrefab;
-    [SerializeField] private int tuercasSpawnCount = 1;      // Cantidad de Nafta a spawnear
 
     public GameObject zPosition;
 
@@ -49,7 +46,7 @@ public class ResourceSpawner : MonoBehaviour
         }
     }
 
-    private void SpawnTuerca(Transform nave)
+    public void SpawnTuerca(Transform nave)
     {
         Instantiate(tuercasPrefab, nave.position, Quaternion.identity);
     }

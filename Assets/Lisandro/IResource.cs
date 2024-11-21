@@ -4,7 +4,7 @@ using UnityEngine;
 
 public interface IResource
 {
-    float MoveSpeed { get; set; }
-
+    float _MoveSpeed { get; set; }
+    float _LifeSpan { get; set; }
     void Move();
 }

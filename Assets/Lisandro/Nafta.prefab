@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4280803680966979270}
   - component: {fileID: 2190554089889297728}
   - component: {fileID: 1242240873503316191}
+  - component: {fileID: -533243843287664628}
   - component: {fileID: 4642477001182426513}
   m_Layer: 0
   m_Name: Nafta
@@ -84,6 +85,21 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &-533243843287664628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4349959425297505869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f97bf757889b864f8bfadd6672f1006, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resourceManager: {fileID: 0}
+  Speed: 6
+  LifeSpan: 30
 --- !u!65 &4642477001182426513
 BoxCollider:
   m_ObjectHideFlags: 0

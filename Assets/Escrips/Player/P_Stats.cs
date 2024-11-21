@@ -32,6 +32,7 @@ public class Stats : MonoBehaviour, IDamageable
     public virtual void Heal(int health)
     {
         HP += health;
+        UpdateUI();
         Mathf.Clamp(HP, 0, MaxHP);
     }
     public virtual void Die()

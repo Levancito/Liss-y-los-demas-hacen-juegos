@@ -54,6 +54,12 @@ public class Enemy : MonoBehaviour, IDamageable, IMovable
         //WinCondition winCondition = FindAnyObjectByType<WinCondition>();
         //winCondition.WinAdd();
         EventManager.TriggerEvent(EventsType.Event_EnemyDestroyed, this);
+        
+        ResourceSpawner resourceSpawner = FindObjectOfType<ResourceSpawner>();
+        if (resourceSpawner != null) 
+        {
+            resourceSpawner.SpawnTuerca(gameObject.transform);
+        }
         Destroy(gameObject);
     }
 

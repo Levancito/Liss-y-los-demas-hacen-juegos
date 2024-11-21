@@ -11,16 +11,16 @@ public class ResourceManager : MonoBehaviour
 
     public void AddCurrency(int cantidad)
     {
-        ActualCurrency = cantidad;
+        ActualCurrency += cantidad;
     }
 
     public void AddTuerca(int cantidad)
     {
-        ActualTuerca = cantidad;
+        ActualTuerca += cantidad;
     }
 
     public void AddStamina(int cantidad)
     {
-        ActualNafta = cantidad;
+        ActualNafta += cantidad;
     }
 }
