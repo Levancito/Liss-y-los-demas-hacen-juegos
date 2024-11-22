@@ -63,7 +63,7 @@ public class CloudSaveData : MonoBehaviour
 
         Debug.Log("------------------------Cloud Saved Data------------------------");
     }
-
+  
     public async void DeleteData()
     {
         Debug.Log("------------------------Cloud Deleting Data------------------------");

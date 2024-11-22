@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    [SerializeField] private GameObject _victoryScreen;
+    //[SerializeField] private GameObject _victoryScreen;
     [SerializeField] private GameObject _defeatScreen;
 
     void Awake()
@@ -17,7 +17,7 @@ public class UIManager : MonoBehaviour
     {
         EventManager.UnsubscribeToEvent(EventsType.Event_Victory, ShowVictoryScreen);
         EventManager.UnsubscribeToEvent(EventsType.Event_Defeat, ShowDefeatScreen);
-        _victoryScreen.SetActive(true);
+        //_victoryScreen.SetActive(true);
     }
     public void ShowDefeatScreen(object[] p)
     {

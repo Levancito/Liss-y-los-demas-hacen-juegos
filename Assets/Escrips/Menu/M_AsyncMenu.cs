@@ -6,11 +6,22 @@ using UnityEngine.SceneManagement;
 public class M_AsyncMenu : MonoBehaviour
 {
     public GameObject PantallaDeCarga;
+    public ResourceManager ResourceManager;
 
+    public void Awake()
+    {
+        ResourceManager = FindObjectOfType<ResourceManager>();
+    }
     public void CargarNivel(int NumeroDeEscena)
     {
+        
         Time.timeScale = 1;
         StartCoroutine(CargarAsync(NumeroDeEscena));
+
+        if(NumeroDeEscena == 1)
+        {
+            ResourceManager.TryPlay();
+        }
     }
     IEnumerator CargarAsync(int NumeroDeEscena)
     {
