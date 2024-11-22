@@ -49,6 +49,14 @@ public class ResourceManager : MonoBehaviour
         SaveFile.fuel = Mathf.Clamp(SaveFile.fuel, 0, 5);
     }
 
+    public void updateResource()
+    {
+        SaveFile.coins = ActualCurrency;
+        SaveFile.bolts = ActualTuerca;
+        SaveFile.fuel = ActualNafta;
+        SaveFile.fuel = Mathf.Clamp(SaveFile.fuel, 0, 5);
+    }
+
     public void TryPlay()
     {
         if (ActualNafta >= 1)
