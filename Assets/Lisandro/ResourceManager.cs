@@ -17,10 +17,7 @@ public class ResourceManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
-        else
-        {
-            Destroy(gameObject);
-        }
+        else Destroy(gameObject);
     }
 
     public void AddCurrency(int cantidad)
