@@ -28,11 +28,9 @@ public class S_Manager : MonoBehaviour
     {
         if (audioMixer.SetFloat("VolumenMusica", Mathf.Log10(valor) * 20))
         {
-            Debug.Log($"Volumen de música actualizado a {valor}");
         }
         else
         {
-            Debug.LogError("No se encontró el parámetro 'VolumenMusica' en el AudioMixer.");
         }
         PlayerPrefs.SetFloat("VolumenMusica", valor);
     }
@@ -41,11 +39,9 @@ public class S_Manager : MonoBehaviour
     {
         if (audioMixer.SetFloat("VolumenSonidos", Mathf.Log10(valor) * 20))
         {
-            Debug.Log($"Volumen de sonidos actualizado a {valor}");
         }
         else
         {
-            Debug.LogError("No se encontró el parámetro 'VolumenSonidos' en el AudioMixer.");
         }
         PlayerPrefs.SetFloat("VolumenSonidos", valor);
     }
