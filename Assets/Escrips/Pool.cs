@@ -11,7 +11,7 @@ public class Pool : MonoBehaviour
     [SerializeField] private bulletFactory bulletFactory;
     [SerializeField] public bool PowerUp = false; // Agregar referencia a PowerUp
 
-    private Stack<PooledObject> stack;
+    public Stack<PooledObject> stack;
 
     private void Awake()
     {

@@ -358,6 +358,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distanceText: {fileID: 1612319477}
+  saveFile:
+    highScore: 0
+    fuel: 5
+    coins: 0
+    bolts: 0
+    upgrade1: 0
+    upgrade2: 0
+    upgrade3: 0
+    customization1: 0
+    customization2: 0
+    customization3: 0
 --- !u!1 &252227391
 GameObject:
   m_ObjectHideFlags: 0
@@ -759,11 +770,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1027519057515239410, guid: ac67e06357aa3b84ebbf3136458fad7d, type: 3}
       propertyPath: m_Name
-      value: Hat_GooglyEyes Variant
+      value: cosmetic3
       objectReference: {fileID: 0}
     - target: {fileID: 1027519057515239410, guid: ac67e06357aa3b84ebbf3136458fad7d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -773,11 +784,6 @@ PrefabInstance:
 --- !u!4 &388793767 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 363009876144917832, guid: ac67e06357aa3b84ebbf3136458fad7d, type: 3}
-  m_PrefabInstance: {fileID: 388793766}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &388793768 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1027519057515239410, guid: ac67e06357aa3b84ebbf3136458fad7d, type: 3}
   m_PrefabInstance: {fileID: 388793766}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &393754132
@@ -1300,7 +1306,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &653284290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1314,9 +1320,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   number: 0
-  _saveData:
+  saveFile:
     highScore: 0
-    playerName: empty
     fuel: 5
     coins: 0
     bolts: 0
@@ -2322,6 +2327,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 141107335}
+        m_TargetAssemblyTypeName: DistanceTracker, Assembly-CSharp
+        m_MethodName: UpdateHighscore
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 703388182}
         m_TargetAssemblyTypeName: M_AsyncMenu, Assembly-CSharp
         m_MethodName: CargarNivel
@@ -2479,11 +2496,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5713436578590265980, guid: f7bf7b6e24106a44d86cf937f4e6f8d5, type: 3}
       propertyPath: m_Name
-      value: Helmet Variant
+      value: cosmetic1
       objectReference: {fileID: 0}
     - target: {fileID: 5713436578590265980, guid: f7bf7b6e24106a44d86cf937f4e6f8d5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2493,11 +2510,6 @@ PrefabInstance:
 --- !u!4 &1178355401 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4900449522614323398, guid: f7bf7b6e24106a44d86cf937f4e6f8d5, type: 3}
-  m_PrefabInstance: {fileID: 1178355400}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1178355402 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5713436578590265980, guid: f7bf7b6e24106a44d86cf937f4e6f8d5, type: 3}
   m_PrefabInstance: {fileID: 1178355400}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1178666505
@@ -2578,11 +2590,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1206330088873174085, guid: f58a6dd7ae0111249a17ec02f4118c35, type: 3}
       propertyPath: m_Name
-      value: splippers Variant
+      value: cosmetic2
       objectReference: {fileID: 0}
     - target: {fileID: 1206330088873174085, guid: f58a6dd7ae0111249a17ec02f4118c35, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1406911220914311079, guid: f58a6dd7ae0111249a17ec02f4118c35, type: 3}
       propertyPath: m_LocalScale.x
@@ -2684,11 +2696,6 @@ PrefabInstance:
 --- !u!4 &1415536251 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2014919377578032895, guid: f58a6dd7ae0111249a17ec02f4118c35, type: 3}
-  m_PrefabInstance: {fileID: 1415536250}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1415536252 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1206330088873174085, guid: f58a6dd7ae0111249a17ec02f4118c35, type: 3}
   m_PrefabInstance: {fileID: 1415536250}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1612319475
@@ -3130,6 +3137,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 141107335}
+        m_TargetAssemblyTypeName: DistanceTracker, Assembly-CSharp
+        m_MethodName: UpdateHighscore
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 703388182}
         m_TargetAssemblyTypeName: M_AsyncMenu, Assembly-CSharp
         m_MethodName: CargarNivel
@@ -3479,15 +3498,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2005080201}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4fd3f2bd7007db84686e7abb4dcf5969, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cosmetics:
-  - {fileID: 1178355402}
-  - {fileID: 1415536252}
-  - {fileID: 388793768}
 --- !u!114 &2005080204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3503,6 +3518,18 @@ MonoBehaviour:
   _Bullet: {fileID: 0}
   _Stats: {fileID: 3469287838082101550}
   _Crontrol: {fileID: 63805836}
+  saveFile:
+    highScore: 0
+    fuel: 5
+    coins: 0
+    bolts: 0
+    upgrade1: 0
+    upgrade2: 0
+    upgrade3: 0
+    customization1: 0
+    customization2: 0
+    customization3: 0
+  _pooledBullets: []
 --- !u!1 &2008305289
 GameObject:
   m_ObjectHideFlags: 0

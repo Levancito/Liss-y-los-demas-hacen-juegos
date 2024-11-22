@@ -11,7 +11,7 @@ public class CloudSaveData : MonoBehaviour
     public static CloudSaveData Instance { get; private set; }
 
     [SerializeField] public int number;
-    [SerializeField] protected SaveFile _saveData = new SaveFile();
+    [SerializeField] public SaveFile saveFile = new SaveFile();
 
     private void Awake()
     {
@@ -46,7 +46,7 @@ public class CloudSaveData : MonoBehaviour
         if (playerData.TryGetValue("MyDataToSave", out var secondKey))
         {
             Debug.Log($"MyDataToSave value: {secondKey.Value.GetAs<string>()}");
-            JsonUtility.FromJsonOverwrite(secondKey.Value.GetAs<string>(), _saveData);
+            JsonUtility.FromJsonOverwrite(secondKey.Value.GetAs<string>(), saveFile);
         }
     }
 
@@ -56,7 +56,7 @@ public class CloudSaveData : MonoBehaviour
 
         var playerData = new Dictionary<string, object> {
         { "MyNumber", number },
-        { "MyDataToSave", JsonUtility.ToJson(_saveData) }};
+        { "MyDataToSave", JsonUtility.ToJson(saveFile) }};
 
         var result = await CloudSaveService.Instance.Data.Player.SaveAsync(playerData);
         Debug.Log($"Saved data {string.Join(',', playerData)}");

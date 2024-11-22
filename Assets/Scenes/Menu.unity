@@ -608,6 +608,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 38588401}
   m_CullTransparentMesh: 1
+--- !u!1 &63603698
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 63603700}
+  - component: {fileID: 63603699}
+  m_Layer: 0
+  m_Name: CustomizationManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &63603699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63603698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fd3f2bd7007db84686e7abb4dcf5969, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &63603700
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63603698}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 149.00752, y: 1099.1855, z: -31.449284}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &66220414
 GameObject:
   m_ObjectHideFlags: 0
@@ -3435,6 +3479,7 @@ GameObject:
   - component: {fileID: 596487428}
   - component: {fileID: 596487427}
   - component: {fileID: 596487426}
+  - component: {fileID: 596487429}
   m_Layer: 5
   m_Name: AdButton
   m_TagString: Untagged
@@ -3504,19 +3549,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 596487427}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 803818505}
-        m_TargetAssemblyTypeName: AdsManager, Assembly-CSharp
-        m_MethodName: ShowRewardedAd
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &596487427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3555,6 +3588,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 596487424}
   m_CullTransparentMesh: 1
+--- !u!114 &596487429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596487424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d378245da99516f4a97f2cee443782f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _button: {fileID: 596487426}
 --- !u!1 &597009173
 GameObject:
   m_ObjectHideFlags: 0
@@ -4513,7 +4559,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _androidID: 5735173
-  _testingMode: 0
+  _testingMode: 1
 --- !u!114 &803818504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8068,9 +8114,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   number: 0
-  _saveData:
+  saveFile:
     highScore: 0
-    playerName: empty
     fuel: 5
     coins: 0
     bolts: 0
@@ -9380,3 +9425,4 @@ SceneRoots:
   - {fileID: 803818506}
   - {fileID: 338709743}
   - {fileID: 1768190479}
+  - {fileID: 63603700}

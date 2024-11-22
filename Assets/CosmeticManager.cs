@@ -1,110 +1,134 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CosmeticManager : MonoBehaviour
 {
-    [SerializeField] private GameObject[] cosmetics;
+    //[SerializeField] private GameObject[] cosmetics;
+
+    //public bool Cos1 = false;
+    //public bool Cos2 = false;
+    //public bool Cos3 = false;
+    
+    public static CosmeticManager Instance { get; private set; }
+    public static SaveFile SaveFile { get; private set; }
+
+    public Dictionary<string, bool> cosmeticsDictionary = new Dictionary<string, bool>() {
+        { "cosmetic1", false },
+        { "cosmetic2", false },
+        { "cosmetic3", false } };
+
+    public Dictionary<string, GameObject> cosmeticGameObjects = new Dictionary<string, GameObject>() {
+        { "cosmetic1", null },
+        { "cosmetic2", null },
+        { "cosmetic3", null} };
+
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else Destroy(gameObject);
+
+        if (SaveFile == null)
+        {
+            SaveFile = FindObjectOfType<CloudSaveData>().saveFile;
+        }
+    }
+
+    void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        FindCosmeticObjects();
+        ApplyCosmetics();
+    }
 
     private void Start()
     {
-        foreach (var cosmetic in cosmetics)
-        {
-            if (cosmetic != null)
-            {
-                cosmetic.SetActive(false);
-            }
-        }
+        cosmeticsDictionary["cosmetic1"] = SaveFile.customization1;
+        cosmeticsDictionary["cosmetic2"] = SaveFile.customization2;
+        cosmeticsDictionary["cosmetic3"] = SaveFile.customization3;
+        //foreach (var cosmetic in cosmetics)
+        //{
+        //    if (cosmetic != null)
+        //    {
+        //        cosmetic.SetActive(false);
+        //    }
+        //}
     }
 
-    public void ActivateCosmetic(GameObject prefab)
+    public void UpdateCloud()
     {
-        foreach (var cosmetic in cosmetics)
-        {
-            if (cosmetic == prefab)
-            {
-                prefab.SetActive(true);
-                return;
-            }
-        }
-
-        Debug.LogWarning("El prefab dado no está en la lista de cosmetics.");
+        SaveFile.customization1 = cosmeticsDictionary["cosmetic1"];
+        SaveFile.customization2 = cosmeticsDictionary["cosmetic2"];
+        SaveFile.customization3 = cosmeticsDictionary["cosmetic3"];
     }
 
-    public void DeactivateCosmetic(GameObject prefab)
+    public void FindCosmeticObjects()
     {
-        foreach (var cosmetic in cosmetics)
+        for (int i = 0; i < 3; i++) 
         {
-            if (cosmetic == prefab)
-            {
-                prefab.SetActive(false);
-                return;
-            }
+            string key = "cosmetic" + ((i + 1).ToString());
+            //GameObject foundObject = GameObject.Find(key);
+            //cosmeticGameObjects[key] = foundObject;
+            cosmeticGameObjects[key] = GameObject.Find(key);
         }
-
-        Debug.LogWarning("El prefab dado no está en la lista de cosmetics.");
     }
-}
 
-public class PrefabManager : MonoBehaviour
-{
-    [SerializeField] private GameObject[] prefabs;
-    [SerializeField] public CosmeticManager cosmeticManager;
-
-    private void Update()
+    public void ApplyCosmetics()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        for (int i = 0; i < 3; i++)
         {
-            SpawnRandomPrefab();
-        }
-
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            ExecuteAnotherMethod();
+            string key = "cosmetic" + ((i + 1).ToString());
+            bool value = cosmeticsDictionary[key];
+            cosmeticGameObjects[key].SetActive(value);
         }
     }
 
-    // Método para generar un prefab aleatorio.
-    private void SpawnRandomPrefab()
+    public void EnableCosmetic(int cosmetic)
     {
-        if (prefabs.Length == 0)
-        {
-            Debug.LogWarning("No hay prefabs asignados en la lista.");
-            return;
-        }
-
-        int randomIndex = Random.Range(0, prefabs.Length); // Obtiene un índice aleatorio.
-        GameObject prefabToSpawn = prefabs[randomIndex];
-
-        if (prefabToSpawn != null)
-        {
-            cosmeticManager.ActivateCosmetic(prefabToSpawn);
-        }
-        else
-        {
-            Debug.LogWarning($"El prefab en el índice {randomIndex} es nulo.");
-        }
+        string key = "cosmetic" + (cosmetic.ToString());
+        cosmeticsDictionary[key] = true;
+        UpdateCloud();
     }
 
-    // Método a llamar cuando se presiona la tecla Q.
-    private void ExecuteAnotherMethod()
-    {
-        if (prefabs.Length == 0)
-        {
-            Debug.LogWarning("No hay prefabs asignados en la lista.");
-            return;
-        }
+    //public void ActivateCosmetic(GameObject prefab)
+    //{
+    //    foreach (var cosmetic in cosmetics)
+    //    {
+    //        if (cosmetic == prefab)
+    //        {
+    //            prefab.SetActive(true);
+    //            return;
+    //        }
+    //    }
 
-        int randomIndex = Random.Range(0, prefabs.Length); // Obtiene un índice aleatorio.
-        GameObject prefabToSpawn = prefabs[randomIndex];
+    //    Debug.LogWarning("El prefab dado no está en la lista de cosmetics.");
+    //}
 
-        if (prefabToSpawn != null)
-        {
-            cosmeticManager.DeactivateCosmetic(prefabToSpawn);
-        }
-        else
-        {
-            Debug.LogWarning($"El prefab en el índice {randomIndex} es nulo.");
-        }
-    }
+    //public void DeactivateCosmetic(GameObject prefab)
+    //{
+    //    foreach (var cosmetic in cosmetics)
+    //    {
+    //        if (cosmetic == prefab)
+    //        {
+    //            prefab.SetActive(false);
+    //            return;
+    //        }
+    //    }
+
+    //    Debug.LogWarning("El prefab dado no está en la lista de cosmetics.");
+    //}
 }

@@ -11,12 +11,12 @@ public class Stats : MonoBehaviour, IDamageable
     public Image HealthBar;
     void Awake()
     {
-
+        MaxHP = 100;
+        HP = MaxHP;
     }
     public void Start()
     {
-        MaxHP = 100;
-        HP = MaxHP;
+        
     }
 
     public virtual void TakeDamage(int damage)

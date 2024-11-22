@@ -14,6 +14,8 @@ public class DistanceTracker : MonoBehaviour
 
     private bool isGameActive = false;
 
+    public SaveFile saveFile;
+
     // Unidades métricas y sus equivalencias
     private readonly string[] units = { "m", "dam", "hm", "km", "Mm", "Gm", "Tm", "Pm", "Em", "Zm", "Ym", "Rm", "Qm" };
     private readonly double[] unitThresholds = {
@@ -31,6 +33,11 @@ public class DistanceTracker : MonoBehaviour
         1e27,          // ronnámetros
         1e30           // quettámetros
     };
+
+    void Awake()
+    {
+        saveFile = FindObjectOfType<CloudSaveData>().saveFile;
+    }
 
     private void Start()
     {
@@ -70,6 +77,15 @@ public class DistanceTracker : MonoBehaviour
         isGameActive = true;
         timeElapsed = 0f; 
         distanceCovered = 0f;
+    }
+
+    public void UpdateHighscore()
+    {
+        var currentHighScore = saveFile.highScore;
+        if (currentHighScore < timeElapsed)
+        {
+            saveFile.highScore = timeElapsed;
+        }
     }
 
     public void StopGame()
