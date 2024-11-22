@@ -29,7 +29,11 @@ AudioMixerController:
   m_SuspendThreshold: -80
   m_EnableSuspend: 1
   m_UpdateMode: 0
-  m_ExposedParameters: []
+  m_ExposedParameters:
+  - guid: 52b1d333224f50848a92c53eebe1b85c
+    name: VolumenMusica
+  - guid: 13ce7b7da8546c942bc220a8ef3c4ed7
+    name: VolumenSonidos
   m_AudioMixerGroupViews:
   - guids:
     - eebe5d6003b61bd468b1ffc800bc0787
@@ -82,7 +86,8 @@ AudioMixerSnapshotController:
   m_Name: Snapshot
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 7d4de733ece33744a96c1a56d7b9695e
-  m_FloatValues: {}
+  m_FloatValues:
+    52b1d333224f50848a92c53eebe1b85c: 0
   m_TransitionOverrides: {}
 --- !u!244 &3078446117126381115
 AudioMixerEffectController:
@@ -104,7 +109,7 @@ AudioMixerGroupController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Musica
+  m_Name: VolumenMusica
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 46327188cac18094f9ea0f933f171811
   m_Children: []
@@ -123,7 +128,7 @@ AudioMixerGroupController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Sonido
+  m_Name: VolumenSonidos
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 45f763f9cab560b4ca85dbb998df12c2
   m_Children: []

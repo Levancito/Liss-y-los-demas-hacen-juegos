@@ -23,17 +23,30 @@ public class S_Manager : MonoBehaviour
         CambiarVolumenSonidos(sliderSonidos.value);
     }
 
-    
+
     public void CambiarVolumenMusica(float valor)
     {
-        audioMixer.SetFloat("VolumenMusica", Mathf.Log10(valor) * 20);
-        PlayerPrefs.SetFloat("VolumenMusica", valor); 
+        if (audioMixer.SetFloat("VolumenMusica", Mathf.Log10(valor) * 20))
+        {
+            Debug.Log($"Volumen de música actualizado a {valor}");
+        }
+        else
+        {
+            Debug.LogError("No se encontró el parámetro 'VolumenMusica' en el AudioMixer.");
+        }
+        PlayerPrefs.SetFloat("VolumenMusica", valor);
     }
-
 
     public void CambiarVolumenSonidos(float valor)
     {
-        audioMixer.SetFloat("VolumenSonidos", Mathf.Log10(valor) * 20);
+        if (audioMixer.SetFloat("VolumenSonidos", Mathf.Log10(valor) * 20))
+        {
+            Debug.Log($"Volumen de sonidos actualizado a {valor}");
+        }
+        else
+        {
+            Debug.LogError("No se encontró el parámetro 'VolumenSonidos' en el AudioMixer.");
+        }
         PlayerPrefs.SetFloat("VolumenSonidos", valor);
     }
 }
