@@ -117,6 +117,8 @@ MonoBehaviour:
   damage: 5
   forwardBoundary: 45
   backwardBoundary: -50
+  Audio: {fileID: 0}
+  AudioClip: {fileID: 8300000, guid: 7d07c8ca713995947863c5d16ff10744, type: 3}
 --- !u!54 &8920830032357177067
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -16,6 +16,7 @@ public class Plane : Enemy
     public float backwardBoundary = -5f;
 
 
+
     private void Update()
     {
         if (transform.position.z < backwardBoundary)
@@ -37,6 +38,7 @@ public class Plane : Enemy
     }
     private void Start()
     {
+
         this.movementSpeed = Speed;
         if (player == null)
         {

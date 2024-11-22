@@ -14,7 +14,7 @@ public class Ship : Enemy
     private float descentSpeed;
 
     private Vector3 initialPosition; 
-    private float angle; 
+    private float angle;
 
     public Ship(int health, float speed, float scale) : base(health, speed, scale)
     {
@@ -26,6 +26,7 @@ public class Ship : Enemy
 
     private void Start()
     {
+
         movementSpeed = Speed;
         initialPosition = transform.position; 
         if (player == null)

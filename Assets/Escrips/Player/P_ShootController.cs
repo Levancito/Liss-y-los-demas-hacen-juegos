@@ -12,6 +12,9 @@ public class P_ShootController : MonoBehaviour
     private float shootTimer = 0f;
     public Transform shootingpos;
 
+    public AudioSource Audio;
+    public AudioClip AudioClip;
+
     private void Update()
     {
 
@@ -35,6 +38,7 @@ public class P_ShootController : MonoBehaviour
 
     private void Shoot(Vector3 position)
     {
+        Audio.PlayOneShot(AudioClip);
         _pool.GetPooledObject(position, shootingpos.rotation);
     }
 }
