@@ -5,6 +5,7 @@ using UnityEngine;
 public class ResourceManager : MonoBehaviour
 {
     public static ResourceManager instance;
+    public static ResourceManager Instance { get; private set; }
 
     public int ActualCurrency;
     public int ActualTuerca;

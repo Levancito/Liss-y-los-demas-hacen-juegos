@@ -18,11 +18,17 @@ public class Currency : MonoBehaviour, IResource
     private void Awake()
     {
         Speed = Random.Range(Speed, Speed + 2);
-        resourceManager = FindObjectOfType<ResourceManager>();
+        if (resourceManager != null) resourceManager = FindObjectOfType<ResourceManager>();
+
         _MoveSpeed = Speed;
         _LifeSpan = LifeSpan * Speed;
 
         StartCoroutine(DestroyAfterLifeSpan());
+    }
+
+    private void Start()
+    {
+        
     }
 
     public virtual void Move()
@@ -38,6 +44,7 @@ public class Currency : MonoBehaviour, IResource
     private void OnCollisionEnter(Collision collision)
     {
         P_ShootController Player = collision.gameObject.GetComponent<P_ShootController>();
+        if (resourceManager != null) resourceManager = FindObjectOfType<ResourceManager>();
 
         if (Player != null)
         {

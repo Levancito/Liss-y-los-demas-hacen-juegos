@@ -20,7 +20,8 @@ public class Fuel : MonoBehaviour, IResource
 
     private void Awake()
     {
-        resourceManager = FindObjectOfType<ResourceManager>();
+        if (resourceManager != null) resourceManager = FindObjectOfType<ResourceManager>();
+
         _MoveSpeed = Speed;
         _LifeSpan = LifeSpan * Speed;
 
@@ -41,6 +42,7 @@ public class Fuel : MonoBehaviour, IResource
     private void OnCollisionEnter(Collision collision)
     {
         P_ShootController Player = collision.gameObject.GetComponent<P_ShootController>();
+        if (resourceManager != null) resourceManager = FindObjectOfType<ResourceManager>();
 
         if (Player != null)
         {

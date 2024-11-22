@@ -175,6 +175,51 @@ MonoBehaviour:
   joystickController: {fileID: 917098704}
   shootInterval: 1
   shootingpos: {fileID: 783765283}
+--- !u!1 &100094625
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 100094626}
+  - component: {fileID: 100094627}
+  m_Layer: 0
+  m_Name: WinController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &100094626
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100094625}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1003657916}
+  m_Father: {fileID: 1648228846}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &100094627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100094625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03a7d6614d1934342b3dc0e3d1a13198, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &122129011
 GameObject:
   m_ObjectHideFlags: 0
@@ -2053,12 +2098,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1003657914}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.080659, y: 22.837938, z: -24.33547}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.559801, y: 37.57289, z: -79.53547}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 100094626}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1009439483
 GameObject:
@@ -2870,7 +2915,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1648228846}
   - component: {fileID: 1648228845}
-  - component: {fileID: 1648228847}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -2905,28 +2949,10 @@ Transform:
   m_Children:
   - {fileID: 141107334}
   - {fileID: 2005080202}
+  - {fileID: 100094626}
+  - {fileID: 2008305290}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1648228847
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1648228844}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 195a96276ff3f924f9b619a1627dd7c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currencyPrefab: {fileID: 589734290478191814, guid: 0e13bb3e7bfc8cd47ab59922ceac0b85, type: 3}
-  currencySpawnRate: 10
-  currencySpawnCount: 3
-  naftaPrefab: {fileID: 4349959425297505869, guid: ece9cb8fb891ac64d8217fa97c2e75a2, type: 3}
-  naftaSpawnRate: 20
-  naftaSpawnCount: 1
-  tuercasPrefab: {fileID: 5638267348916799936, guid: 2fe52fc87a217d840b38859a8f72fbab, type: 3}
-  zPosition: {fileID: 1648228844}
 --- !u!1001 &1690638691
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3298,7 +3324,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1827388623}
   - component: {fileID: 1827388622}
-  - component: {fileID: 1827388624}
   m_Layer: 0
   m_Name: spawner
   m_TagString: Untagged
@@ -3339,18 +3364,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1827388624
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1827388621}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03a7d6614d1934342b3dc0e3d1a13198, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1857310888
 GameObject:
   m_ObjectHideFlags: 0
@@ -3490,6 +3503,58 @@ MonoBehaviour:
   _Bullet: {fileID: 0}
   _Stats: {fileID: 3469287838082101550}
   _Crontrol: {fileID: 63805836}
+--- !u!1 &2008305289
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2008305290}
+  - component: {fileID: 2008305291}
+  m_Layer: 0
+  m_Name: ResourceSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2008305290
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2008305289}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1648228846}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2008305291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2008305289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 195a96276ff3f924f9b619a1627dd7c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currencyPrefab: {fileID: 589734290478191814, guid: 0e13bb3e7bfc8cd47ab59922ceac0b85, type: 3}
+  currencySpawnRate: 10
+  currencySpawnCount: 3
+  naftaPrefab: {fileID: 4349959425297505869, guid: ece9cb8fb891ac64d8217fa97c2e75a2, type: 3}
+  naftaSpawnRate: 20
+  naftaSpawnCount: 1
+  tuercasPrefab: {fileID: 5638267348916799936, guid: 2fe52fc87a217d840b38859a8f72fbab, type: 3}
+  zPosition: {fileID: 1648228844}
 --- !u!4 &543450652017720968 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: db512efd72cf3674696075572524e38b, type: 3}
@@ -3614,7 +3679,6 @@ SceneRoots:
   - {fileID: 1690638691}
   - {fileID: 537379275}
   - {fileID: 1648228846}
-  - {fileID: 1003657916}
   - {fileID: 703388183}
   - {fileID: 139859850}
   - {fileID: 653284291}

@@ -15,25 +15,25 @@ public class WinCondition : MonoBehaviour
         Ship[] allShips = FindObjectsOfType<Ship>(true);
         Plane[] allPlanes = FindObjectsOfType<Plane>(true);
 
-        totalEnemies = 0;
-
-        int activeShipsCount = 0;
-        foreach (Ship ship in allShips)
-        {
-            if (ship.gameObject.activeInHierarchy)
-            {
-                activeShipsCount++;
-            }
-        }
-        int activePlanesCount = 0;
-        foreach (Plane plane in allPlanes)
-        {
-            if (plane.gameObject.activeInHierarchy)
-            {
-                activePlanesCount++;
-            }
-        }
-        totalEnemies = activeShipsCount + activePlanesCount;
+        //totalEnemies = 0;
+        totalEnemies = 33;
+        //int activeShipsCount = 0;
+        //foreach (Ship ship in allShips)
+        //{
+        //    if (ship.gameObject.activeInHierarchy)
+        //    {
+        //        activeShipsCount++;
+        //    }
+        //}
+        //int activePlanesCount = 0;
+        //foreach (Plane plane in allPlanes)
+        //{
+        //    if (plane.gameObject.activeInHierarchy)
+        //    {
+        //        activePlanesCount++;
+        //    }
+        //}
+        //totalEnemies = activeShipsCount + activePlanesCount;
     }
 
     public void WinAdd()

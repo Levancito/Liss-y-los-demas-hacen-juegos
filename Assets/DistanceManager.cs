@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro; 
+using TMPro;
 
 public class DistanceTracker : MonoBehaviour
 {
     [SerializeField]
-    private TextMeshProUGUI distanceText; // Campo para mostrar la distancia en UI usando TextMeshPro
+    private TextMeshProUGUI distanceText; 
 
-    private float timeElapsed = 0f; // Tiempo jugado en segundos
-    private double distanceCovered = 0f; // Distancia total en metros (usando double para grandes valores)
+    private float timeElapsed = 0f; 
+    private double distanceCovered = 0f;
 
-    private bool isGameActive = false; // Indica si el juego está activo
+    private bool isGameActive = false;
 
     // Unidades métricas y sus equivalencias
     private readonly string[] units = { "m", "dam", "hm", "km", "Mm", "Gm", "Tm", "Pm", "Em", "Zm", "Ym", "Rm", "Qm" };
@@ -32,17 +32,18 @@ public class DistanceTracker : MonoBehaviour
         1e30           // quettámetros
     };
 
+    private void Start()
+    {
+        distanceText.text = "0.00 m";
+        StartGame();
+    }
+
     private void Update()
     {
-        if (!isGameActive) return; // Solo calcula si el juego está activo
-
-        // Incrementa el tiempo jugado
+        if (!isGameActive) return; 
         timeElapsed += Time.deltaTime;
-
-        // Calcula la distancia (1 segundo = 1 metro)
         distanceCovered = timeElapsed;
 
-        // Actualiza el texto mostrado
         UpdateDistanceText();
     }
 
@@ -51,7 +52,6 @@ public class DistanceTracker : MonoBehaviour
         string unit = "m";
         double displayValue = distanceCovered;
 
-        // Determina la unidad apropiada
         for (int i = 0; i < unitThresholds.Length; i++)
         {
             if (distanceCovered < unitThresholds[i])
@@ -62,22 +62,19 @@ public class DistanceTracker : MonoBehaviour
             displayValue = distanceCovered / unitThresholds[i];
         }
 
-        // Muestra la distancia con 2 decimales
         distanceText.text = $"{displayValue:F2} {unit}";
     }
 
-    // Método para iniciar el conteo
     public void StartGame()
     {
         isGameActive = true;
-        timeElapsed = 0f; // Reinicia el tiempo al inicio del juego
-        distanceCovered = 0f; // Reinicia la distancia
+        timeElapsed = 0f; 
+        distanceCovered = 0f;
     }
 
-    // Método para pausar o detener el conteo
     public void StopGame()
     {
-        isGameActive = false;
+        //aca se podria mandar a savefile
     }
 }
 
