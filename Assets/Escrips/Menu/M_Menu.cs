@@ -65,9 +65,9 @@ public class M_Menu : MonoBehaviour
         Plata2.text = $"{ResourceManager.ActualCurrency}"; ;
     }
 
-    public void ActualizarData()
+    public async void ActualizarData()
     {
-        CloudSaveData.Instance.LoadData();
+        await CloudSaveData.Instance.LoadData();
     }
 
     

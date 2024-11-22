@@ -11,6 +11,8 @@ public class MyUserAuth : MonoBehaviour
 {
     public static MyUserAuth Instance { get; private set; }
 
+    public event System.Action OnAuthenticationComplete;
+
     private void Awake()
     {
         if (Instance == null)
@@ -50,6 +52,7 @@ public class MyUserAuth : MonoBehaviour
         {
             Debug.Log($"Player ID: {AuthenticationService.Instance.PlayerId}");
             Debug.Log($"Access Token : {AuthenticationService.Instance.AccessToken}");
+            OnAuthenticationComplete?.Invoke();
         };
 
         AuthenticationService.Instance.SignInFailed += errorResponse =>
@@ -73,9 +76,10 @@ public class MyUserAuth : MonoBehaviour
         }
 
         PlayerAccountService.Instance.SignedIn += SignInWithUnityAsync;
+
     }
 
-    async Task SignInAnonymouslyAsync()
+    public async Task SignInAnonymouslyAsync()
     {
         try
         {

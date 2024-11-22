@@ -2,8 +2,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.Services.CloudSave;
 //using Unity.Services.Authentication;
-//using Unity.Services.Core;
-//using System.Threading.Tasks;
+using Unity.Services.Core;
+using System.Threading.Tasks;
 //using Unity.VisualScripting;
 
 public class CloudSaveData : MonoBehaviour
@@ -25,13 +25,17 @@ public class CloudSaveData : MonoBehaviour
 
     private void Start()
     {
-        //await UnityServices.InitializeAsync();
-        //await AuthenticationService.Instance.SignInAnonymouslyAsync();
+        MyUserAuth.Instance.OnAuthenticationComplete += AuthenticationCompleted;
         //SaveData(12345, "TestPlayer", 2, 10, 50, true, false, true, false, true, false);
-        //LoadData("highScore");
     }
 
-    public async void LoadData()
+    private async void AuthenticationCompleted()
+    {
+        await Instance.LoadData();
+    }
+
+    [ContextMenu("Load Data")]
+    public async Task LoadData()
     {
         Debug.Log("------------------------Cloud Loading Data------------------------");
 
@@ -50,6 +54,7 @@ public class CloudSaveData : MonoBehaviour
         }
     }
 
+    [ContextMenu("Save Data")]
     public async void SaveData()
     {
         Debug.Log("------------------------Cloud Saving Data------------------------");
@@ -62,6 +67,11 @@ public class CloudSaveData : MonoBehaviour
         Debug.Log($"Saved data {string.Join(',', playerData)}");
 
         Debug.Log("------------------------Cloud Saved Data------------------------");
+    }
+
+    private async void OnApplicationQuit()
+    {
+        await SaveData();
     }
   
     public async void DeleteData()

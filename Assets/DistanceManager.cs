@@ -36,7 +36,7 @@ public class DistanceTracker : MonoBehaviour
 
     void Awake()
     {
-        saveFile = FindObjectOfType<CloudSaveData>().saveFile;
+        saveFile = CloudSaveData.Instance.saveFile;
     }
 
     private void Start()
