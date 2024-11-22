@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class P_Crontrol : MonoBehaviour
 {
     [SerializeField] P_Controller _controller;
-    [SerializeField] public float _speed = 0.5f;
+    [SerializeField] public float _speed = 0.4f;
     [SerializeField] float _max = 0.1f ;
 
     private Camera _camera;
