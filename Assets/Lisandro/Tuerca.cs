@@ -15,6 +15,8 @@ public class Tuerca : MonoBehaviour, IResource
 
     private int LifeSpan = 30;
 
+    public AudioSource Audio;
+    public AudioClip AudioClip;
 
     private void Awake()
     {
@@ -38,7 +40,6 @@ public class Tuerca : MonoBehaviour, IResource
     private void OnCollisionEnter(Collision collision)
     {
         P_ShootController Player = collision.gameObject.GetComponent<P_ShootController>();
-
         if (Player != null)
         {
             Stats PlayerStats = Player.GetComponent<Stats>();
@@ -58,6 +59,8 @@ public class Tuerca : MonoBehaviour, IResource
             }
             else
             {
+                Audio.PlayOneShot(AudioClip);
+
                 PlayerStats.Heal(Healing);
                 Destroy(gameObject);
             }

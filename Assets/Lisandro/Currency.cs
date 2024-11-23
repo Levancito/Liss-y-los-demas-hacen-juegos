@@ -14,6 +14,8 @@ public class Currency : MonoBehaviour, IResource
     [SerializeField] private int Speed;
     private int LifeSpan = 30;
 
+    public AudioSource Audio;
+    public AudioClip AudioClip;
 
     private void Awake()
     {
@@ -44,7 +46,7 @@ public class Currency : MonoBehaviour, IResource
     private void OnCollisionEnter(Collision collision)
     {
         P_ShootController Player = collision.gameObject.GetComponent<P_ShootController>();
-
+        Audio.PlayOneShot(AudioClip);
         if (Player != null)
         {
             if (resourceManager != null)

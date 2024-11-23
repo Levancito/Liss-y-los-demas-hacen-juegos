@@ -55,7 +55,7 @@ public class CloudSaveData : MonoBehaviour
     }
 
     [ContextMenu("Save Data")]
-    public async void SaveData()
+    public async Task SaveData()
     {
         Debug.Log("------------------------Cloud Saving Data------------------------");
 
@@ -71,9 +71,14 @@ public class CloudSaveData : MonoBehaviour
 
     private async void OnApplicationQuit()
     {
-        await SaveData();
+        await CloudSaveData.Instance.SaveData();
     }
-  
+
+    public async void Save()
+    {
+        await CloudSaveData.Instance.SaveData();
+    }
+
     public async void DeleteData()
     {
         Debug.Log("------------------------Cloud Deleting Data------------------------");

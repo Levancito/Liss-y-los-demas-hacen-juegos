@@ -52,6 +52,7 @@ public class DistanceTracker : MonoBehaviour
         distanceCovered = timeElapsed;
 
         UpdateDistanceText();
+        UpdateHighscore();
     }
 
     private void UpdateDistanceText()

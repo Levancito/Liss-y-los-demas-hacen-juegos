@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +10,13 @@ public class SaveButton : MonoBehaviour
     void Start()
     {
         _button.onClick.RemoveAllListeners();
-        _button.onClick.AddListener(CloudSaveData.Instance.SaveData);
+        _button.onClick.AddListener(() => Save());
     }
+
+    private async void Save()
+    {
+        await CloudSaveData.Instance.SaveData();
+        Debug.Log("Data saved successfully");
+
+    }   
 }

@@ -14,7 +14,6 @@ public class Enemy : MonoBehaviour, IDamageable, IMovable
     //private WinCondition winCondition;
 
 
-
     public Enemy(int health, float speed, float scale)
     {
         MaxHP = health;
