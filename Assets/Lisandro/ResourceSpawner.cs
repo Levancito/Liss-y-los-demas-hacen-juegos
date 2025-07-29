@@ -7,13 +7,13 @@ public class ResourceSpawner : MonoBehaviour
 {
     [Header("Currency Settings")]
     [SerializeField] private GameObject currencyPrefab;
-    [SerializeField] private float currencySpawnRate = 2f; // Tiempo entre spawns de Currency
-    [SerializeField] private int currencySpawnCount = 3;   // Cantidad de Currency a spawnear
+    [SerializeField] private float currencySpawnRate = 2f; 
+    [SerializeField] private int currencySpawnCount = 3;   
 
     [Header("Nafta Settings")]
     [SerializeField] private GameObject naftaPrefab;
-    [SerializeField] private float naftaSpawnRate = 3f;    // Tiempo entre spawns de Nafta
-    [SerializeField] private int naftaSpawnCount = 2;      // Cantidad de Nafta a spawnear
+    [SerializeField] private float naftaSpawnRate = 3f;    
+    [SerializeField] private int naftaSpawnCount = 2;      
 
     [Header("Tuercas Settings")]
     [SerializeField] private GameObject tuercasPrefab;

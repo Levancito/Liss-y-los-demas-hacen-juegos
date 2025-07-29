@@ -93,7 +93,15 @@ public class CosmeticManager : MonoBehaviour
         {
             string key = "cosmetic" + ((i + 1).ToString());
             bool value = cosmeticsDictionary[key];
-            cosmeticGameObjects[key].SetActive(value);
+
+            if (cosmeticGameObjects[key] != null)
+            {
+                cosmeticGameObjects[key].SetActive(value);
+            }
+            else
+            {
+                Debug.LogWarning($"No: {key}");
+            }
         }
     }
 
@@ -104,31 +112,4 @@ public class CosmeticManager : MonoBehaviour
         UpdateCloud();
     }
 
-    //public void ActivateCosmetic(GameObject prefab)
-    //{
-    //    foreach (var cosmetic in cosmetics)
-    //    {
-    //        if (cosmetic == prefab)
-    //        {
-    //            prefab.SetActive(true);
-    //            return;
-    //        }
-    //    }
-
-    //    Debug.LogWarning("El prefab dado no está en la lista de cosmetics.");
-    //}
-
-    //public void DeactivateCosmetic(GameObject prefab)
-    //{
-    //    foreach (var cosmetic in cosmetics)
-    //    {
-    //        if (cosmetic == prefab)
-    //        {
-    //            prefab.SetActive(false);
-    //            return;
-    //        }
-    //    }
-
-    //    Debug.LogWarning("El prefab dado no está en la lista de cosmetics.");
-    //}
 }

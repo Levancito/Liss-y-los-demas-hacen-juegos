@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem.XR;
 using UnityEngine.UI;
 
 public class Stats : MonoBehaviour, IDamageable
@@ -32,11 +33,22 @@ public class Stats : MonoBehaviour, IDamageable
     public virtual void Heal(int health)
     {
         HP += health;
+        HP = Mathf.Clamp(HP, 0, MaxHP);
         UpdateUI();
-        Mathf.Clamp(HP, 0, MaxHP);
     }
     public virtual void Die()
     {
+        var shooting = GetComponent<P_ShootController>();
+
+        if (shooting != null)
+        {
+            shooting.enabled = false;
+        }
+        var controller = GetComponent<P_Crontrol>();
+        if (controller != null)
+        {
+            controller.enabled = false;
+        }
         EventManager.TriggerEvent(EventsType.Event_Defeat, this);
         //Destroy(gameObject);
         //cualquier otra logica de GameOver tipo pantalla etc

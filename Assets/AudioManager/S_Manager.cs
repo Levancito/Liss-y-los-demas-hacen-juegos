@@ -16,15 +16,15 @@ public class S_Manager : MonoBehaviour
 
     private void Start()
     {
-        // Cargar valores guardados o asignar valores predeterminados
         sliderMusica.value = PlayerPrefs.GetFloat("VolumenMusica", 0.75f);
         sliderSonidos.value = PlayerPrefs.GetFloat("VolumenSonidos", 0.75f);
 
-        // Aplicar volúmenes iniciales
+        Debug.Log("Volumen música inicial: " + sliderMusica.value);
+        Debug.Log("Volumen sonidos inicial: " + sliderSonidos.value);
+
         CambiarVolumenMusica(sliderMusica.value);
         CambiarVolumenSonidos(sliderSonidos.value);
 
-        // Suscribir los eventos de cambio de los sliders
         sliderMusica.onValueChanged.AddListener(CambiarVolumenMusica);
         sliderSonidos.onValueChanged.AddListener(CambiarVolumenSonidos);
     }

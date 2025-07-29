@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ResourceManager : MonoBehaviour
 {
-    //public static ResourceManager instance;
     public static ResourceManager Instance { get; private set; }
     public static SaveFile SaveFile { get; private set; }
 
@@ -64,13 +63,14 @@ public class ResourceManager : MonoBehaviour
             ActualNafta--;
             SaveFile.fuel = ActualNafta;
             SaveFile.fuel = Mathf.Clamp(SaveFile.fuel, 0, 5);
-            // para el boton de play de la UI deberia llamar a esto, si le da la nafta, llama a otro script al metodo
-            // que cambie de escena. eso o que el script de cambio de escena se fije aca
-            //cambio de escena capaz?
+
+            GameSessionSummary.GuardarValoresIniciales();
+
+        
+            FindObjectOfType<M_AsyncMenu>().CargarNivel(1); 
         }
         else
         {
-            //capaz un cartel de UI que te avise que no podes arrancar?
             Debug.LogWarning("No tenes nafta para arrancar la nave");
         }
     }
