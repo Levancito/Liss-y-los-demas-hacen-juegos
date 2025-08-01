@@ -17,6 +17,7 @@ public class Bullet : MonoBehaviour, IProduct
         remoteconfig = GetComponent<RemoteConfig>();
         if (remoteconfig != null)
         {
+            speed = RemoteConfigService.Instance.appConfig.GetFloat("BulletSpeed", speed);
             damage = RemoteConfigService.Instance.appConfig.GetInt("BulletDamage", damage);
         }
     }
@@ -43,9 +44,10 @@ public class Bullet : MonoBehaviour, IProduct
         }
 
     }
-    public void UpdateDamage(int newDamage)
+    public void UpdateDamage(int newDamage, float newSpeed)
     {
         damage = newDamage;
+        speed = newSpeed;
     }
     public void OnCollisionEnter(Collision collision)
     {

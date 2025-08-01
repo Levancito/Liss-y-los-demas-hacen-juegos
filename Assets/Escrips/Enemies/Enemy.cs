@@ -38,6 +38,11 @@ public class Enemy : MonoBehaviour, IDamageable, IMovable
         MaxHP = newMaxHealth;
         HP = MaxHP;
     }
+    public void UpdateSpeed(float EnemySpeed)
+    {
+        Speed = EnemySpeed;
+    }
+
     public virtual void TakeDamage(int damage)
     {
         Debug.Log("tomo daño" + damage);

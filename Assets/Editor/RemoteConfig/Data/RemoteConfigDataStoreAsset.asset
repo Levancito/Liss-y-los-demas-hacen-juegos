@@ -12,36 +12,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 469c24fdb3bd6431b92cc1465bd9166b, type: 3}
   m_Name: RemoteConfigDataStoreAsset
   m_EditorClassIdentifier: 
-  _rsKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"dceb3ed5-00b1-448c-b255-6b04ef9c4d96\"\r\n   
+  _rsKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"37b41955-33ca-4d6d-926c-6dbb0f190f05\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"EnemyLife\",\r\n      \"type\": \"float\",\r\n     
     \"value\": 15.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
-    \"38fe96a2-1eac-4e50-8005-f5fea8c53817\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"d28be519-1e2f-4b14-a820-df1eac3200b0\"\r\n    },\r\n    \"rs\": {\r\n     
     \"key\": \"ShootInterval\",\r\n      \"type\": \"float\",\r\n      \"value\":
-    0.3\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"e5ad0ced-b860-4d3e-91b2-826575e4050e\"\r\n   
+    0.3\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"9841415b-ee77-44cb-9789-6ed916cfe800\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"BulletDamage\",\r\n      \"type\": \"float\",\r\n     
     \"value\": 5.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
-    \"8fd65085-c68f-4331-85bc-32ab12159554\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"49250ade-94b5-4529-90d8-b97d50492999\"\r\n    },\r\n    \"rs\": {\r\n     
     \"key\": \"PlayerSpeed\",\r\n      \"type\": \"float\",\r\n      \"value\": 0.4\r\n   
-    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"f8192f7e-d8d0-4a96-a374-f9951f6e3614\"\r\n   
+    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"29e3a6dd-d628-4e2c-836c-00595a62b7f1\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"EnemyDamage\",\r\n      \"type\": \"int\",\r\n     
     \"value\": 25\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
-    \"bf303fca-0272-4741-82cb-3a946f930d29\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"c6075fcc-bed6-4b5b-921e-539576f5ea22\"\r\n    },\r\n    \"rs\": {\r\n     
     \"key\": \"Comentario\",\r\n      \"type\": \"string\",\r\n      \"value\": \"Bienvenidos!\"\r\n   
     }\r\n  }\r\n]"
-  _rsLastCachedKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"dceb3ed5-00b1-448c-b255-6b04ef9c4d96\"\r\n   
+  _rsLastCachedKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"37b41955-33ca-4d6d-926c-6dbb0f190f05\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"EnemyLife\",\r\n      \"type\": \"float\",\r\n     
     \"value\": 15.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
-    \"38fe96a2-1eac-4e50-8005-f5fea8c53817\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"d28be519-1e2f-4b14-a820-df1eac3200b0\"\r\n    },\r\n    \"rs\": {\r\n     
     \"key\": \"ShootInterval\",\r\n      \"type\": \"float\",\r\n      \"value\":
-    0.3\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"e5ad0ced-b860-4d3e-91b2-826575e4050e\"\r\n   
+    0.3\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"9841415b-ee77-44cb-9789-6ed916cfe800\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"BulletDamage\",\r\n      \"type\": \"float\",\r\n     
     \"value\": 5.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
-    \"8fd65085-c68f-4331-85bc-32ab12159554\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"49250ade-94b5-4529-90d8-b97d50492999\"\r\n    },\r\n    \"rs\": {\r\n     
     \"key\": \"PlayerSpeed\",\r\n      \"type\": \"float\",\r\n      \"value\": 0.4\r\n   
-    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"f8192f7e-d8d0-4a96-a374-f9951f6e3614\"\r\n   
+    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"29e3a6dd-d628-4e2c-836c-00595a62b7f1\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"EnemyDamage\",\r\n      \"type\": \"int\",\r\n     
     \"value\": 25\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
-    \"bf303fca-0272-4741-82cb-3a946f930d29\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"c6075fcc-bed6-4b5b-921e-539576f5ea22\"\r\n    },\r\n    \"rs\": {\r\n     
     \"key\": \"Comentario\",\r\n      \"type\": \"string\",\r\n      \"value\": \"Bienvenidos!\"\r\n   
     }\r\n  }\r\n]"
   _environments: "[\r\n  {\r\n    \"projectId\": \"94664836-e2de-46df-8814-330b3b297890\",\r\n   
