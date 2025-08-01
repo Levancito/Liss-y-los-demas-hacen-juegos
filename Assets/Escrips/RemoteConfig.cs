@@ -107,8 +107,16 @@ public class RemoteConfig : MonoBehaviour
         MenuManager[] menu = FindObjectsOfType<MenuManager>();
         foreach (var menuManager in menu)
         {
-            menuManager.UpdateComentary(Comentario);
+            menuManager.UpdateComentary(Comentario, Update);
             Debug.Log(Comentario);
         }
+        // Configurar ResourceSpawner
+        ResourceSpawner[] spawners = FindObjectsOfType<ResourceSpawner>();
+        foreach (var spawner in spawners)
+        {
+            spawner.ConfigureFromRemote(SpawnIntervalCurrency, SpawnIntervalNafta);
+        }
     }
+
+
 }

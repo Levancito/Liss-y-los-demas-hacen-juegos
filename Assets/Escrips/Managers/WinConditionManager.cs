@@ -7,20 +7,21 @@ public class WinConditionManager : MonoBehaviour
 {
     private int _enemyAmountIndex = 0;
     private int _requiredKills = 15;
+
     [SerializeField] private TextMeshProUGUI enemiesRemainingText;
+    [SerializeField] private GameObject continueUI;
+
+    private bool hasWatchedAd = false;
+
 
 
     private void Awake()
     {
-        EventManager.SubscribeToEvent(EventsType.Event_EnemyDestroyed, onEnemyDestroyed);
-        EventManager.SubscribeToEvent(EventsType.Event_Victory, Victory);
-        EventManager.SubscribeToEvent(EventsType.Event_Defeat, Defeat);
-
+        SubscribeAll();
         UpdateEnemiesRemainingText();
-
     }
 
-    void onEnemyDestroyed(object[] p)
+    public void OnEnemyDestroyed(object[] p)
     {
         _enemyAmountIndex += p.Length;
         UpdateEnemiesRemainingText();
@@ -31,25 +32,61 @@ public class WinConditionManager : MonoBehaviour
         }
     }
 
-    void UpdateEnemiesRemainingText()
+    public void OnVictory(object[] p)
+    {
+        UnsubscribeAll();
+        Time.timeScale = 0;
+        Debug.Log("Victoria!");
+    }
+
+    public void OnDefeat(object[] p)
+    {
+        UnsubscribeAll();
+
+        if (!hasWatchedAd)
+        {
+            Time.timeScale = 0;
+            continueUI.SetActive(true);
+            Debug.Log("Derrota - se ofrece continuar con ad.");
+        }
+        else
+        {
+            Time.timeScale = 0;
+            Debug.Log("Derrota definitiva.");
+        }
+    }
+
+    public void OnContinueButtonPressed()
+    {
+        AdsManager.instance.ShowRewardedAd(() =>
+        {
+            hasWatchedAd = true;
+            continueUI.SetActive(false);
+            Time.timeScale = 1;
+
+            SubscribeAll();
+
+            Debug.Log("Jugador continuó después del anuncio.");
+        });
+    }
+
+    private void UpdateEnemiesRemainingText()
     {
         int enemiesRemaining = _requiredKills - _enemyAmountIndex;
         enemiesRemainingText.text = $"Enemigos restantes: {enemiesRemaining}";
     }
 
-    void Victory(object[] p)
+    private void SubscribeAll()
     {
-        //aca van las acciones que se triggerean cuando se gana
-        EventManager.UnsubscribeToEvent(EventsType.Event_EnemyDestroyed, onEnemyDestroyed);
-        EventManager.UnsubscribeToEvent(EventsType.Event_Victory, Victory);
-        EventManager.UnsubscribeToEvent(EventsType.Event_Defeat, Defeat);
-        Time.timeScale = 0;
+        EventManager.SubscribeToEvent(EventsType.Event_EnemyDestroyed, OnEnemyDestroyed);
+        EventManager.SubscribeToEvent(EventsType.Event_Victory, OnVictory);
+        EventManager.SubscribeToEvent(EventsType.Event_Defeat, OnDefeat);
     }
-    void Defeat(object[] p)
+
+    private void UnsubscribeAll()
     {
-        EventManager.UnsubscribeToEvent(EventsType.Event_EnemyDestroyed, onEnemyDestroyed);
-        EventManager.UnsubscribeToEvent(EventsType.Event_Victory, Victory);
-        EventManager.UnsubscribeToEvent(EventsType.Event_Defeat, Defeat);
-        Time.timeScale = 0;
+        EventManager.UnsubscribeToEvent(EventsType.Event_EnemyDestroyed, OnEnemyDestroyed);
+        EventManager.UnsubscribeToEvent(EventsType.Event_Victory, OnVictory);
+        EventManager.UnsubscribeToEvent(EventsType.Event_Defeat, OnDefeat);
     }
 }

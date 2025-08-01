@@ -7,21 +7,30 @@ public class ResourceSpawner : MonoBehaviour
 {
     [Header("Currency Settings")]
     [SerializeField] private GameObject currencyPrefab;
-    [SerializeField] private float currencySpawnRate = 2f; 
-    [SerializeField] private int currencySpawnCount = 3;   
+    [SerializeField] private int currencySpawnCount = 3;
 
     [Header("Nafta Settings")]
     [SerializeField] private GameObject naftaPrefab;
-    [SerializeField] private float naftaSpawnRate = 3f;    
-    [SerializeField] private int naftaSpawnCount = 2;      
+    [SerializeField] private int naftaSpawnCount = 2;
 
     [Header("Tuercas Settings")]
     [SerializeField] private GameObject tuercasPrefab;
 
     public GameObject zPosition;
 
+    private float currencySpawnRate = 2f;
+    private float naftaSpawnRate = 3f;
+
     private void Start()
     {
+        // Espera a que RemoteConfig lo configure más tarde
+    }
+
+    public void ConfigureFromRemote(float currencyRate, float naftaRate)
+    {
+        currencySpawnRate = currencyRate;
+        naftaSpawnRate = naftaRate;
+
         InvokeRepeating(nameof(SpawnCurrency), 0f, currencySpawnRate);
         InvokeRepeating(nameof(SpawnNafta), 0f, naftaSpawnRate);
     }

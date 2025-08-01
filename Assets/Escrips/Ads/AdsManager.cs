@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -32,6 +33,10 @@ public class AdsManager : MonoBehaviour
 
     [ContextMenu("Test Rewarded")]  public void ShowRewardedAd() => _rewardedAds.ShowRewardedAd();
 
+    public void ShowRewardedAd(Action onComplete)
+    {
+        _rewardedAds.ShowRewardedAd(onComplete);
+    }
     IEnumerator BannerAd()
     {
         while (true)
