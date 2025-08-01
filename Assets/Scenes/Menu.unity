@@ -930,6 +930,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PantallaDeCarga: {fileID: 495979313}
   ResourceManager: {fileID: 0}
+  popupConfirmacion: {fileID: 0}
 --- !u!4 &75574337
 Transform:
   m_ObjectHideFlags: 0
@@ -2600,11 +2601,11 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 196162862}
   - {fileID: 38588402}
   - {fileID: 1792759821}
   - {fileID: 442633654}
   - {fileID: 130628645}
+  - {fileID: 196162862}
   - {fileID: 66220415}
   - {fileID: 495979314}
   - {fileID: 1837162176}
