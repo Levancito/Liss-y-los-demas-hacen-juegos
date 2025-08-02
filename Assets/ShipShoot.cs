@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class ShipShoot : MonoBehaviour
 {
-    public GameObject bulletPrefab; // Prefab de la bala
-    public Transform firePoint; // Punto de donde se disparará la bala
-    public float fireRate = 0.5f; // Frecuencia de disparo
+    public GameObject bulletPrefab;
+    public Transform firePoint;
+    public float fireRate = 0.5f;
+    public int maxDamage = 90;
+    public int minDamage = 10;
+    public float maxDistance = 20f;
+
+    private Transform player;
 
     private void Start()
     {
-        Debug.Log("Enemigo iniciado, comenzando a disparar.");
+        player = GameObject.FindGameObjectWithTag("Player")?.transform;
         StartCoroutine(Shoot());
     }
 
@@ -25,11 +30,18 @@ public class ShipShoot : MonoBehaviour
 
     private void Fire()
     {
-        Debug.Log("Disparando...");
+        if (player == null) return;
+
+        float distance = Vector3.Distance(transform.position, player.position);
+        float t = Mathf.Clamp01(distance / maxDistance);
+        int scaledDamage = Mathf.RoundToInt(Mathf.Lerp(maxDamage, minDamage, t)); // <- Cambio acá
+
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+
         EnemyBullet enemyBullet = bullet.GetComponent<EnemyBullet>();
         if (enemyBullet != null)
         {
+            enemyBullet.UpdateDamage(scaledDamage);
             enemyBullet.GetDirection();
         }
     }

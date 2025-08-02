@@ -23,6 +23,10 @@ public class RemoteConfig : MonoBehaviour
     public string Comentario = "";// Hecho
     public string Update = "";
 
+    public static RemoteConfig Instance;
+
+
+    public int EnemyDamageBase = 10;
     async Task InitializeRemoteConfigAsync()
     {
         await UnityServices.InitializeAsync();
@@ -63,7 +67,11 @@ public class RemoteConfig : MonoBehaviour
         Update = RemoteConfigService.Instance.appConfig.GetString("Update");
         NotifyControllers(); 
     }
+    public int GetScaledEnemyDamage(float distanceCovered)
+    {
+        return Mathf.FloorToInt(EnemyDamageBase + distanceCovered / 10f);
 
+    }
     private void NotifyControllers()
     {
         // Velicidad de Disparo

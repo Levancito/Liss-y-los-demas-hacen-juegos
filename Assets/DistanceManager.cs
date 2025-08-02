@@ -15,6 +15,7 @@ public class DistanceTracker : MonoBehaviour
     private bool isGameActive = false;
 
     public SaveFile saveFile;
+    public static double DistanceCovered { get; private set; }
 
     // Unidades métricas y sus equivalencias
     private readonly string[] units = { "m", "dam", "hm", "km", "Mm", "Gm", "Tm", "Pm", "Em", "Zm", "Ym", "Rm", "Qm" };
@@ -47,9 +48,10 @@ public class DistanceTracker : MonoBehaviour
 
     private void Update()
     {
-        if (!isGameActive) return; 
+        if (!isGameActive) return;
         timeElapsed += Time.deltaTime;
-        distanceCovered = timeElapsed;
+        DistanceCovered = timeElapsed; // Guardamos la distancia
+        distanceCovered = DistanceCovered;
 
         UpdateDistanceText();
         UpdateHighscore();

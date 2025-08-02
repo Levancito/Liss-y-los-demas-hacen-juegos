@@ -10,7 +10,7 @@ public class Plane : Enemy
     [SerializeField]
     private float movementSpeed;
     [SerializeField]
-    private int damage;
+    public int damage;
 
     public float forwardBoundary = 5f;
     public float backwardBoundary = -5f;
@@ -73,6 +73,10 @@ public class Plane : Enemy
         }
     }
 
+    public void UpdateDamage(int newDamage)
+    {
+        damage = newDamage;
+    }
     public override void Die()
     {
         Debug.Log("La nave ha sido destruida.");

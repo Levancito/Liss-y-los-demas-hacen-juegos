@@ -11,36 +11,44 @@ public class UIManager : MonoBehaviour
 
     private void Awake()
     {
-        EventManager.SubscribeToEvent(EventsType.Event_Victory, ShowVictoryScreen);
-        EventManager.SubscribeToEvent(EventsType.Event_Defeat, ShowDefeatScreen);
+        SubscribeEvents();
 
         if (_continuePanel != null)
             _continuePanel.SetActive(false);
     }
 
+    private void SubscribeEvents()
+    {
+        EventManager.SubscribeToEvent(EventsType.Event_Victory, ShowVictoryScreen);
+        EventManager.SubscribeToEvent(EventsType.Event_Defeat, ShowDefeatScreen);
+    }
+
     public void ShowVictoryScreen(object[] p)
     {
         UnsubscribeEvents();
-        // Podés activar la pantalla de victoria si querés
+        // Mostrar pantalla victoria si querés
     }
 
     public void ShowDefeatScreen(object[] p)
     {
-        UnsubscribeEvents();
-
         Time.timeScale = 0;
 
         if (!hasWatchedAd && _continuePanel != null)
         {
-            _continuePanel.SetActive(true); 
-        }
-        else if (_defeatScreen != null)
-        {
-            _defeatScreen.SetActive(true); 
+            _continuePanel.SetActive(true);
         }
         else
         {
-            Debug.LogWarning("La pantalla de derrota (_defeatScreen) no está asignada.");
+            if (_defeatScreen != null)
+            {
+                _defeatScreen.SetActive(true);
+            }
+            else
+            {
+                Debug.LogWarning("La pantalla de derrota (_defeatScreen) no está asignada.");
+            }
+
+            UnsubscribeEvents();
         }
     }
 
@@ -57,10 +65,7 @@ public class UIManager : MonoBehaviour
 
             Stats playerStats = GameObject.FindObjectOfType<Stats>();
 
-            if (playerStats == null)
-            {
-            }
-            else
+            if (playerStats != null)
             {
                 playerStats.Heal(50);
 
@@ -69,27 +74,20 @@ public class UIManager : MonoBehaviour
                 {
                     shooting.enabled = true;
                 }
-                
 
                 var control = playerStats.GetComponent<P_Crontrol>();
                 if (control != null)
                 {
                     control.enabled = true;
                 }
-                
             }
-
-
 
             WinConditionManager win = GameObject.FindObjectOfType<WinConditionManager>();
 
             if (win != null)
             {
-                EventManager.SubscribeToEvent(EventsType.Event_EnemyDestroyed, win.OnEnemyDestroyed);
-                EventManager.SubscribeToEvent(EventsType.Event_Victory, win.OnVictory);
-                EventManager.SubscribeToEvent(EventsType.Event_Defeat, win.OnDefeat);
+                SubscribeEvents();
             }
-
         });
     }
 
