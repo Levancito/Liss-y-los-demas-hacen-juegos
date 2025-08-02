@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,7 +9,7 @@ public class M_AsyncMenu : MonoBehaviour
     public GameObject PantallaDeCarga;
     public ResourceManager ResourceManager;
     public PopupConfirmacion popupConfirmacion;
-
+    public TMP_Dropdown controlDropdown;
     public void Awake()
     {
         ResourceManager = FindObjectOfType<ResourceManager>();
@@ -28,6 +29,14 @@ public class M_AsyncMenu : MonoBehaviour
     {
         if (operacionActual != null && !operacionActual.isDone) return;
 
+        if (controlDropdown != null)
+        {
+            int selectedControlType = controlDropdown.value; // 0 = Gyro, 1 = Joystick
+            PlayerPrefs.SetInt("ControlType", selectedControlType);
+            PlayerPrefs.Save();
+            Debug.Log("Guardado tipo de control: " + selectedControlType);
+        }
+
         Time.timeScale = 1;
         operacionActual = SceneManager.LoadSceneAsync(NumeroDeEscena);
         StartCoroutine(ManejarCarga(operacionActual));
@@ -37,6 +46,7 @@ public class M_AsyncMenu : MonoBehaviour
             ResourceManager.TryPlay();
         }
     }
+
 
     private IEnumerator ManejarCarga(AsyncOperation operacion)
     {

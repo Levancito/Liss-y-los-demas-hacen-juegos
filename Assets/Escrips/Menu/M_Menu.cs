@@ -55,8 +55,17 @@ public class M_Menu : MonoBehaviour
 
     public void ComprarStamina()
     {
-        ResourceManager.ActualCurrency -= 10;
-        ResourceManager.AddStamina(1);
+        int costo = 10;
+
+        if (ResourceManager.ActualCurrency >= costo)
+        {
+            ResourceManager.ActualCurrency -= costo;
+            ResourceManager.AddStamina(1);
+        }
+        else
+        {
+            Debug.LogWarning("No tenés suficiente plata para comprar stamina.");
+        }
     }
 
     public void ActualizarPlata()
@@ -70,5 +79,10 @@ public class M_Menu : MonoBehaviour
         await CloudSaveData.Instance.LoadData();
     }
 
-    
+    public void OnDropdownChanged(int index)
+    {
+        PlayerPrefs.SetInt("ControlType", index);
+        PlayerPrefs.Save();
+    }
+
 }

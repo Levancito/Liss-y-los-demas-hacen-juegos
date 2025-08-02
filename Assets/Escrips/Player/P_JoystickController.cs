@@ -19,7 +19,7 @@ public class P_JoystickController : P_Controller, IDragHandler, IEndDragHandler
 
     public override Vector3 GetMovementInput()
     {
-        Vector3 modifiedDir = new Vector3(MoveDir.x, 0, MoveDir.y);
+        Vector3 modifiedDir = new Vector3(MoveDir.x, 0f, MoveDir.y);
         return modifiedDir;
     }
 
