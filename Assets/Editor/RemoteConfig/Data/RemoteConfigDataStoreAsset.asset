@@ -12,66 +12,66 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 469c24fdb3bd6431b92cc1465bd9166b, type: 3}
   m_Name: RemoteConfigDataStoreAsset
   m_EditorClassIdentifier: 
-  _rsKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"d1bc46b5-1bd5-43fb-85a8-f36eb2bdd811\"\r\n   
+  _rsKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"e2535463-1481-4c48-aa22-194466e330b6\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"EnemyLife\",\r\n      \"type\": \"float\",\r\n     
     \"value\": 25.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
-    \"3981f5a2-b692-4963-a6f5-03258a004f51\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"7e44627c-d515-4595-a622-8ab7896bf197\"\r\n    },\r\n    \"rs\": {\r\n     
     \"key\": \"ShootInterval\",\r\n      \"type\": \"float\",\r\n      \"value\":
-    0.3\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"ab0c3ccb-913c-45ab-aa29-500c1a25613d\"\r\n   
+    0.3\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"1e1cb023-d6c3-46d4-bbf6-289acf62a01d\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"BulletDamage\",\r\n      \"type\": \"float\",\r\n     
     \"value\": 5.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
-    \"a4b4aa1c-3937-4dc1-949e-7c111c86bdb5\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"9fb82186-b4b7-4d9f-9fb2-f68a0a80cc37\"\r\n    },\r\n    \"rs\": {\r\n     
     \"key\": \"PlayerSpeed\",\r\n      \"type\": \"float\",\r\n      \"value\": 0.4\r\n   
-    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"5af847f4-9423-43a6-bac7-837b83acbc59\"\r\n   
+    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"61f272ef-e716-495a-ad53-7a097a8c98aa\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"EnemyDamage\",\r\n      \"type\": \"int\",\r\n     
     \"value\": 30\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
-    \"4a679e8e-e0fd-474b-83c3-2f400ac69bb0\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"344a79ff-b995-44a1-bbb5-c5a618ae3446\"\r\n    },\r\n    \"rs\": {\r\n     
     \"key\": \"Comentario\",\r\n      \"type\": \"string\",\r\n      \"value\": \"Bienvenidos!\"\r\n   
-    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"da84b7aa-af19-460d-9014-fc9dd5a99d6b\"\r\n   
+    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"4e846812-abc1-48ee-b9be-11947c96db61\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"EnemySpeed\",\r\n      \"type\": \"float\",\r\n     
     \"value\": 2.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
-    \"639b66b2-bad9-4fea-bd8f-83b6e7072222\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"d9d1730a-b361-4526-be01-c2562dc0012f\"\r\n    },\r\n    \"rs\": {\r\n     
     \"key\": \"BulletSpeed\",\r\n      \"type\": \"float\",\r\n      \"value\": 10.0\r\n   
-    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"3dfb63c9-fce9-40e5-8521-2e1db8583bea\"\r\n   
+    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"26abae62-3641-42eb-98ca-5c19e5217298\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"SpawnIntervalCurrency\",\r\n      \"type\":
-    \"float\",\r\n      \"value\": 5.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\":
-    {\r\n      \"entityId\": \"fa652464-acfc-400d-88f0-345a89ccdf9f\"\r\n    },\r\n   
+    \"float\",\r\n      \"value\": 10.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\":
+    {\r\n      \"entityId\": \"75f9683e-4984-4eb7-a69a-4f306655aab1\"\r\n    },\r\n   
     \"rs\": {\r\n      \"key\": \"SpawnIntervalNafta\",\r\n      \"type\": \"float\",\r\n     
-    \"value\": 3.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
-    \"c1e3408d-6cd5-4d69-b75e-e4c83533c2f1\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"value\": 8.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
+    \"4e5e6784-ab84-43ca-80a4-977dc4a59955\"\r\n    },\r\n    \"rs\": {\r\n     
     \"key\": \"SpawnIntervalUpgrade\",\r\n      \"type\": \"float\",\r\n      \"value\":
-    2.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"e0a2948a-d91f-473c-901e-29cfb91dc09e\"\r\n   
+    2.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"f284edc4-6987-44a4-bfad-9a7ec9af37d9\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"Update\",\r\n      \"type\": \"string\",\r\n     
     \"value\": \"0.1\"\r\n    }\r\n  }\r\n]"
-  _rsLastCachedKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"d1bc46b5-1bd5-43fb-85a8-f36eb2bdd811\"\r\n   
+  _rsLastCachedKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"e2535463-1481-4c48-aa22-194466e330b6\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"EnemyLife\",\r\n      \"type\": \"float\",\r\n     
     \"value\": 25.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
-    \"3981f5a2-b692-4963-a6f5-03258a004f51\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"7e44627c-d515-4595-a622-8ab7896bf197\"\r\n    },\r\n    \"rs\": {\r\n     
     \"key\": \"ShootInterval\",\r\n      \"type\": \"float\",\r\n      \"value\":
-    0.3\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"ab0c3ccb-913c-45ab-aa29-500c1a25613d\"\r\n   
+    0.3\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"1e1cb023-d6c3-46d4-bbf6-289acf62a01d\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"BulletDamage\",\r\n      \"type\": \"float\",\r\n     
     \"value\": 5.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
-    \"a4b4aa1c-3937-4dc1-949e-7c111c86bdb5\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"9fb82186-b4b7-4d9f-9fb2-f68a0a80cc37\"\r\n    },\r\n    \"rs\": {\r\n     
     \"key\": \"PlayerSpeed\",\r\n      \"type\": \"float\",\r\n      \"value\": 0.4\r\n   
-    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"5af847f4-9423-43a6-bac7-837b83acbc59\"\r\n   
+    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"61f272ef-e716-495a-ad53-7a097a8c98aa\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"EnemyDamage\",\r\n      \"type\": \"int\",\r\n     
     \"value\": 30\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
-    \"4a679e8e-e0fd-474b-83c3-2f400ac69bb0\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"344a79ff-b995-44a1-bbb5-c5a618ae3446\"\r\n    },\r\n    \"rs\": {\r\n     
     \"key\": \"Comentario\",\r\n      \"type\": \"string\",\r\n      \"value\": \"Bienvenidos!\"\r\n   
-    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"da84b7aa-af19-460d-9014-fc9dd5a99d6b\"\r\n   
+    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"4e846812-abc1-48ee-b9be-11947c96db61\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"EnemySpeed\",\r\n      \"type\": \"float\",\r\n     
     \"value\": 2.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
-    \"639b66b2-bad9-4fea-bd8f-83b6e7072222\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"d9d1730a-b361-4526-be01-c2562dc0012f\"\r\n    },\r\n    \"rs\": {\r\n     
     \"key\": \"BulletSpeed\",\r\n      \"type\": \"float\",\r\n      \"value\": 10.0\r\n   
-    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"3dfb63c9-fce9-40e5-8521-2e1db8583bea\"\r\n   
+    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"26abae62-3641-42eb-98ca-5c19e5217298\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"SpawnIntervalCurrency\",\r\n      \"type\":
-    \"float\",\r\n      \"value\": 5.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\":
-    {\r\n      \"entityId\": \"fa652464-acfc-400d-88f0-345a89ccdf9f\"\r\n    },\r\n   
+    \"float\",\r\n      \"value\": 10.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\":
+    {\r\n      \"entityId\": \"75f9683e-4984-4eb7-a69a-4f306655aab1\"\r\n    },\r\n   
     \"rs\": {\r\n      \"key\": \"SpawnIntervalNafta\",\r\n      \"type\": \"float\",\r\n     
-    \"value\": 3.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
-    \"c1e3408d-6cd5-4d69-b75e-e4c83533c2f1\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"value\": 8.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
+    \"4e5e6784-ab84-43ca-80a4-977dc4a59955\"\r\n    },\r\n    \"rs\": {\r\n     
     \"key\": \"SpawnIntervalUpgrade\",\r\n      \"type\": \"float\",\r\n      \"value\":
-    2.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"e0a2948a-d91f-473c-901e-29cfb91dc09e\"\r\n   
+    2.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"f284edc4-6987-44a4-bfad-9a7ec9af37d9\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"Update\",\r\n      \"type\": \"string\",\r\n     
     \"value\": \"0.1\"\r\n    }\r\n  }\r\n]"
   _environments: "[\r\n  {\r\n    \"projectId\": \"94664836-e2de-46df-8814-330b3b297890\",\r\n   

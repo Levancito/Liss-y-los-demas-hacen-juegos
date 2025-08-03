@@ -62,7 +62,12 @@ public class Enemy : MonoBehaviour, IDamageable, IMovable
         ResourceSpawner resourceSpawner = FindObjectOfType<ResourceSpawner>();
         if (resourceSpawner != null) 
         {
-            resourceSpawner.SpawnTuerca(gameObject.transform);
+            var numero = Random.Range(0,101);
+            if (numero <= 20)
+            {
+                Debug.Log(numero);
+                resourceSpawner.SpawnTuerca(gameObject.transform);
+            }
         }
         Destroy(gameObject);
     }

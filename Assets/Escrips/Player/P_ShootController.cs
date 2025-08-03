@@ -11,7 +11,7 @@ public class P_ShootController : MonoBehaviour
     public float shootInterval = 0.4f;
     private float shootTimer = 0f;
     public Transform shootingpos;
-
+    public ParticleSystem shoot;
     public AudioSource Audio;
     public AudioClip AudioClip;
 
@@ -38,6 +38,7 @@ public class P_ShootController : MonoBehaviour
 
     private void Shoot(Vector3 position)
     {
+        shoot.Play();
         Audio.PlayOneShot(AudioClip);
         _pool.GetPooledObject(position, shootingpos.rotation);
     }
