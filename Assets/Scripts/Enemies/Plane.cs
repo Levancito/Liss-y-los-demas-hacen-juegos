@@ -48,7 +48,6 @@ public class Plane : Enemy
 
     private void FixedUpdate()
     {
-        //Debug.Log("EL AVION TIENE " + HP);
         Move();
     }
 

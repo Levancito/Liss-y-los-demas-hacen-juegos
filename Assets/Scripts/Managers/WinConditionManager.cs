@@ -47,12 +47,10 @@ public class WinConditionManager : MonoBehaviour
         {
             Time.timeScale = 0;
             continueUI.SetActive(true);
-            Debug.Log("Derrota - se ofrece continuar con ad.");
         }
         else
         {
             Time.timeScale = 0;
-            Debug.Log("Derrota definitiva.");
         }
     }
 
@@ -66,14 +64,12 @@ public class WinConditionManager : MonoBehaviour
 
             SubscribeAll();
 
-            Debug.Log("Jugador continuó después del anuncio.");
         });
     }
 
     private void UpdateEnemiesRemainingText()
     {
         int enemiesRemaining = _requiredKills - _enemyAmountIndex;
-        enemiesRemainingText.text = $"Enemigos restantes: {enemiesRemaining}";
     }
 
     private void SubscribeAll()

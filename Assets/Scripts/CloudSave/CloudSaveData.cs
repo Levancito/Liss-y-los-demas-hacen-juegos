@@ -82,6 +82,7 @@ public class CloudSaveData : MonoBehaviour
                 JsonUtility.FromJsonOverwrite(secondKey.Value.GetAs<string>(), saveFile);
 
                 ResourceManager.Instance.LoadFromSaveFile();
+                CosmeticManager.Instance.LoadFromSaveFile();
             }
         }
         catch (System.Exception ex)

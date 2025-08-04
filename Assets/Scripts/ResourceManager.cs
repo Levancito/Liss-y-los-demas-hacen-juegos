@@ -84,9 +84,6 @@ public class ResourceManager : MonoBehaviour
 
             FindObjectOfType<M_AsyncMenu>().CargarNivel(1); 
         }
-        else
-        {
-            Debug.LogWarning("No tenes nafta para arrancar la nave");
-        }
+        
     }
 }

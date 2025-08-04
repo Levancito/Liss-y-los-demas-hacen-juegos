@@ -49,12 +49,10 @@ public class Fuel : MonoBehaviour, IResource
             if (resourceManager != null)
             {
                 resourceManager.AddStamina(1);
-                Debug.Log("Se ha añadido 1 de Currency");
                 Destroy(gameObject);
             }
             else
             {
-                Debug.LogWarning("ResourceManager no está asignado en ResourceStats.");
             }
         }
     }
@@ -62,7 +60,6 @@ public class Fuel : MonoBehaviour, IResource
     private IEnumerator DestroyAfterLifeSpan()
     {
         yield return new WaitForSeconds(LifeSpan);
-        Debug.Log("Objeto destruido por alcanzar su tiempo de vida.");
         Destroy(gameObject);
     }
 }

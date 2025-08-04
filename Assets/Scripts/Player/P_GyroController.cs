@@ -10,7 +10,7 @@ public class P_GyroController : P_Controller
     {
         if (!SystemInfo.supportsAccelerometer)
         {
-            Debug.LogWarning("Este dispositivo no soporta acelerómetro.");
+            Debug.LogWarning("no soporta acelerómetro.");
         }
     }
 

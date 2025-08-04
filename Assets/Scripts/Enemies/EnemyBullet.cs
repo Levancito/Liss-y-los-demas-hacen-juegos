@@ -25,7 +25,6 @@ public class EnemyBullet : MonoBehaviour
             {
                 damageable.TakeDamage(damage);
             }
-            //Destroy(gameObject);
         }
     }
 

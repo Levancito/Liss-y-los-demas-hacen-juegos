@@ -64,7 +64,7 @@ public class M_Menu : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("No tenés suficiente plata para comprar stamina.");
+            Debug.LogWarning("No podes arrancar la nave.");
         }
     }
 

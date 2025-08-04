@@ -26,7 +26,6 @@ public class UIManager : MonoBehaviour
     public void ShowVictoryScreen(object[] p)
     {
         UnsubscribeEvents();
-        // Mostrar pantalla victoria si querés
     }
 
     public void ShowDefeatScreen(object[] p)
@@ -43,10 +42,7 @@ public class UIManager : MonoBehaviour
             {
                 _defeatScreen.SetActive(true);
             }
-            else
-            {
-                Debug.LogWarning("La pantalla de derrota (_defeatScreen) no está asignada.");
-            }
+
 
             UnsubscribeEvents();
         }

@@ -88,6 +88,7 @@ public class M_AsyncMenu : MonoBehaviour
     {
         popupConfirmacion.Mostrar("¿Querés volver al menú principal?", () =>
         {
+            ResourceManager.Instance.updateResource();
             CargarNivel(0);
         });
     }

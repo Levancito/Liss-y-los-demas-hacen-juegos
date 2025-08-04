@@ -50,7 +50,6 @@ public class P_Animations : MonoBehaviour
             }
         }
 
-        // Contador de tiempo bloqueado
         if (tiempoBloqueado > 0f)
         {
             tiempoBloqueado -= Time.deltaTime;

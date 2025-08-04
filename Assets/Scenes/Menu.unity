@@ -1065,7 +1065,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PantallaDeCarga: {fileID: 495979313}
   ResourceManager: {fileID: 0}
-  popupConfirmacion: {fileID: 0}
+  popupConfirmacion: {fileID: 196162863}
   controlDropdown: {fileID: 1152551126}
 --- !u!4 &75574337
 Transform:

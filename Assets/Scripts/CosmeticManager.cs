@@ -87,6 +87,15 @@ public class CosmeticManager : MonoBehaviour
 
         ApplyCosmetics(); 
     }
+
+    public void LoadFromSaveFile()
+    {
+        cosmeticsDictionary["cosmetic1"] = SaveFile.customization1;
+        cosmeticsDictionary["cosmetic2"] = SaveFile.customization2;
+        cosmeticsDictionary["cosmetic3"] = SaveFile.customization3;
+
+        ApplyCosmetics();
+    }
     public void FindCosmeticObjects()
     {
         for (int i = 0; i < 3; i++) 

@@ -33,11 +33,11 @@ public class S_Manager : MonoBehaviour
     {
         if (valor > 0.001f)
         {
-            audioMixer.SetFloat("VolumenMusica", Mathf.Log10(valor) * 20); // Convierte a decibelios
+            audioMixer.SetFloat("VolumenMusica", Mathf.Log10(valor) * 20); 
         }
         else
         {
-            audioMixer.SetFloat("VolumenMusica", -80f); // Silencia cuando el valor es 0
+            audioMixer.SetFloat("VolumenMusica", -80f);
         }
         PlayerPrefs.SetFloat("VolumenMusica", valor);
     }
@@ -46,11 +46,11 @@ public class S_Manager : MonoBehaviour
     {
         if (valor > 0.001f)
         {
-            audioMixer.SetFloat("VolumenSonidos", Mathf.Log10(valor) * 20); // Convierte a decibelios
+            audioMixer.SetFloat("VolumenSonidos", Mathf.Log10(valor) * 20); 
         }
         else
         {
-            audioMixer.SetFloat("VolumenSonidos", -80f); // Silencia cuando el valor es 0
+            audioMixer.SetFloat("VolumenSonidos", -80f);
         }
         PlayerPrefs.SetFloat("VolumenSonidos", valor);
     }

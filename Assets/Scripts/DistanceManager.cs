@@ -17,22 +17,22 @@ public class DistanceTracker : MonoBehaviour
     public SaveFile saveFile;
     public static double DistanceCovered { get; private set; }
 
-    // Unidades métricas y sus equivalencias
+    
     private readonly string[] units = { "m", "dam", "hm", "km", "Mm", "Gm", "Tm", "Pm", "Em", "Zm", "Ym", "Rm", "Qm" };
     private readonly double[] unitThresholds = {
-        1,             // metros
-        10,            // decámetros
-        100,           // hectómetros
-        1_000,         // kilómetros
-        1_000_000,     // megámetros
-        1_000_000_000, // gigámetros
-        1e12,          // terámetros
-        1e15,          // petámetros
-        1e18,          // exámetros
-        1e21,          // zettámetros
-        1e24,          // yottámetros
-        1e27,          // ronnámetros
-        1e30           // quettámetros
+        1,             
+        10,           
+        100,           
+        1_000,         
+        1_000_000,     
+        1_000_000_000, 
+        1e12,          
+        1e15,          
+        1e18,          
+        1e21,          
+        1e24,          
+        1e27,          
+        1e30           
     };
 
     void Awake()
@@ -50,7 +50,7 @@ public class DistanceTracker : MonoBehaviour
     {
         if (!isGameActive) return;
         timeElapsed += Time.deltaTime;
-        DistanceCovered = timeElapsed; // Guardamos la distancia
+        DistanceCovered = timeElapsed; 
         distanceCovered = DistanceCovered;
 
         UpdateDistanceText();
@@ -91,9 +91,5 @@ public class DistanceTracker : MonoBehaviour
         }
     }
 
-    public void StopGame()
-    {
-        //aca se podria mandar a savefile
-    }
 }
 

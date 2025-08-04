@@ -21,10 +21,6 @@ public class ResourceSpawner : MonoBehaviour
     private float currencySpawnRate = 2f;
     private float naftaSpawnRate = 3f;
 
-    private void Start()
-    {
-        // Espera a que RemoteConfig lo configure más tarde
-    }
 
     public void ConfigureFromRemote(float currencyRate, float naftaRate)
     {
@@ -43,7 +39,6 @@ public class ResourceSpawner : MonoBehaviour
         {
             Vector3 randomPosition = GetRandomPosition();
             Instantiate(currencyPrefab, randomPosition, Quaternion.identity);
-            Debug.Log($"Spawneado Currency #{i + 1} en: {randomPosition}");
         }
     }
 
@@ -53,7 +48,6 @@ public class ResourceSpawner : MonoBehaviour
         {
             Vector3 randomPosition = GetRandomPosition();
             Instantiate(naftaPrefab, randomPosition, Quaternion.Euler(0, 0, Random.Range(0, 360)));
-            Debug.Log($"Spawneado Nafta #{i + 1} en: {randomPosition}");
         }
     }
 

@@ -9,7 +9,7 @@ public class Pool : MonoBehaviour
     [SerializeField] private uint initPoolSize = 3;
     [SerializeField] private PooledObject objectToPool;
     [SerializeField] private bulletFactory bulletFactory;
-    [SerializeField] public bool PowerUp = false; // Agregar referencia a PowerUp
+    [SerializeField] public bool PowerUp = false; 
 
     public Stack<PooledObject> stack;
 
@@ -35,7 +35,6 @@ public class Pool : MonoBehaviour
     {
         PooledObject nextInstance = GetOrCreateObject(position, rotation);
 
-        // Si el PowerUp está activo, instanciar dos balas más
         if (PowerUp)
         {
             float spreadAngle = 15f;
