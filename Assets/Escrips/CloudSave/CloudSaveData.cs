@@ -6,11 +6,6 @@ using Unity.Services.Core;
 using System.Threading.Tasks;
 //using Unity.VisualScripting;
 
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using UnityEngine;
-using Unity.Services.CloudSave;
-using Unity.Services.Core;
 using Unity.Services.Authentication;
 
 public class CloudSaveData : MonoBehaviour
@@ -138,7 +133,14 @@ public class CloudSaveData : MonoBehaviour
                 await CloudSaveService.Instance.Data.Player.DeleteAsync(key.Key);
             }
 
-            Debug.Log("------------------------Cloud Data Deleted------------------------");
+            saveFile = new SaveFile();
+            number = 0;
+
+
+            // Guardar el estado limpio
+            await SaveData();
+
+            Debug.Log("------------------------Cloud Data Deleted y reiniciado------------------------");
         }
         catch (System.Exception ex)
         {

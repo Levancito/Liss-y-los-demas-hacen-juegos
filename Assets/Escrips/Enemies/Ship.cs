@@ -26,6 +26,7 @@ public class Ship : Enemy
 
     private void Start()
     {
+        anim.SetTrigger("Ship Idle");
 
         movementSpeed = Speed;
         initialPosition = transform.position; 
@@ -42,7 +43,14 @@ public class Ship : Enemy
 
     public override void Die()
     {
-        Debug.Log("La nave ha sido destruida.");
+        anim.SetTrigger("Ship Die");
+
+        StartCoroutine(DieAfterSeconds(1f));
+    }
+
+    private IEnumerator DieAfterSeconds(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
         Destroy(gameObject);
     }
 
@@ -62,6 +70,7 @@ public class Ship : Enemy
             targetPosition.x + offsetX,
             transform.position.y,
             newZ
+
         );
     }
 }

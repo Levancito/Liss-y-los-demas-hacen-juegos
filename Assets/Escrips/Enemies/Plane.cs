@@ -38,7 +38,7 @@ public class Plane : Enemy
     }
     private void Start()
     {
-
+        anim.SetTrigger("Plane Idle");
         this.movementSpeed = Speed;
         if (player == null)
         {
@@ -77,9 +77,17 @@ public class Plane : Enemy
     {
         damage = newDamage;
     }
+
     public override void Die()
     {
-        Debug.Log("La nave ha sido destruida.");
+        anim.SetTrigger("Plane Die");
+
+        StartCoroutine(DieAfterSeconds(1f));
+    }
+
+    private IEnumerator DieAfterSeconds(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
         Destroy(gameObject);
     }
 }

@@ -31,14 +31,26 @@ public class M_AsyncMenu : MonoBehaviour
 
         if (controlDropdown != null)
         {
-            int selectedControlType = controlDropdown.value; // 0 = Gyro, 1 = Joystick
+            int selectedControlType = controlDropdown.value; 
             PlayerPrefs.SetInt("ControlType", selectedControlType);
             PlayerPrefs.Save();
             Debug.Log("Guardado tipo de control: " + selectedControlType);
         }
 
         Time.timeScale = 1;
-        operacionActual = SceneManager.LoadSceneAsync(NumeroDeEscena);
+
+        if (!CloudSaveData.Instance.saveFile.tutorialShown)
+        {
+            CloudSaveData.Instance.saveFile.tutorialShown = true;
+            CloudSaveData.Instance.Save();
+            Debug.Log("Primera vez: cargando tutorial...");
+            operacionActual = SceneManager.LoadSceneAsync("Tutorial"); 
+        }
+        else
+        {
+            operacionActual = SceneManager.LoadSceneAsync(NumeroDeEscena);
+        }
+
         StartCoroutine(ManejarCarga(operacionActual));
 
         if (NumeroDeEscena == 1)

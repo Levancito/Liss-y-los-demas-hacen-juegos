@@ -17,4 +17,5 @@ public class SaveFile
     public bool customization1 = true;
     public bool customization2 = true;
     public bool customization3 = true;
+    public bool tutorialShown = false;
 }

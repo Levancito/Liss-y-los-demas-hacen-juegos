@@ -9,11 +9,12 @@ public class P_Crontrol : MonoBehaviour
     public enum ControlType { Joystick, Gyro }
 
     [Header("Tipo de control")]
-    [SerializeField] private ControlType tipoDeControl;
+    [SerializeField] public ControlType tipoDeControl;
 
     [Header("Referencias de controladores")]
     [SerializeField] private P_JoystickController joystickController;
     [SerializeField] private P_GyroController gyroController;
+    [SerializeField] private P_Animations animaciones;
 
     [Header("Movimiento")]
     [SerializeField] public float _speed = 0.4f;
@@ -53,6 +54,7 @@ public class P_Crontrol : MonoBehaviour
 
         Vector3 moveInput = _controller.GetMovementInput() * _speed * Time.deltaTime;
         Vector3 newPosition = transform.position + moveInput;
+        animaciones.ReportarMovimiento(moveInput);
 
         float xMin = -_screenWidth + _max;
         float xMax = _screenWidth - _max;

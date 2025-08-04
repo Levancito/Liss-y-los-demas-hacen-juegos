@@ -10,9 +10,11 @@ public class ShipShoot : MonoBehaviour
     public int maxDamage = 90;
     public int minDamage = 10;
     public float maxDistance = 20f;
-
+    public ParticleSystem shooting;
     private Transform player;
+    public Animator animator;
 
+    
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
@@ -24,6 +26,7 @@ public class ShipShoot : MonoBehaviour
         while (true)
         {
             Fire();
+            shooting.Play();
             yield return new WaitForSeconds(fireRate);
         }
     }
@@ -34,13 +37,15 @@ public class ShipShoot : MonoBehaviour
 
         float distance = Vector3.Distance(transform.position, player.position);
         float t = Mathf.Clamp01(distance / maxDistance);
-        int scaledDamage = Mathf.RoundToInt(Mathf.Lerp(maxDamage, minDamage, t)); // <- Cambio acá
+        int scaledDamage = Mathf.RoundToInt(Mathf.Lerp(maxDamage, minDamage, t)); 
 
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        animator.SetTrigger("Ship Shoot");
 
         EnemyBullet enemyBullet = bullet.GetComponent<EnemyBullet>();
         if (enemyBullet != null)
         {
+
             enemyBullet.UpdateDamage(scaledDamage);
             enemyBullet.GetDirection();
         }

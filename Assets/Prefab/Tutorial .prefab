@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2616510674935262805
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 792426292923675404}
+  - component: {fileID: 8584386250849436997}
+  m_Layer: 0
+  m_Name: 'Tutorial '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &792426292923675404
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2616510674935262805}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 555.5261, y: 934.5781, z: 346.7403}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7882319135904172152}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8584386250849436997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2616510674935262805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eabc0159689ea294ea6860c78518e9cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tutorialUI: {fileID: 0}
+  tutorialText: {fileID: 0}
+  nextButton: {fileID: 0}
+  finishButton: {fileID: 0}
+  joystickUI: {fileID: 0}
+  enemy1Prefab: {fileID: 366577225974449120, guid: 638d9f6d73fa25c45986d4e755313c8d, type: 3}
+  enemy2Prefab: {fileID: 366577225974449120, guid: c450ecdfc5656364a893507a436a6925, type: 3}
+  itemTuerca: {fileID: 5638267348916799936, guid: 2fe52fc87a217d840b38859a8f72fbab, type: 3}
+  itemNafta: {fileID: 4349959425297505869, guid: ece9cb8fb891ac64d8217fa97c2e75a2, type: 3}
+  itemCoin: {fileID: 589734290478191814, guid: 0e13bb3e7bfc8cd47ab59922ceac0b85, type: 3}
+  itemMejora: {fileID: 3693384041831556566, guid: 48db7c18bba5286479bbef104cd940bd, type: 3}
+  movimientoScript: {fileID: 0}
+  disparoScript: {fileID: 0}
+  spawnPoint: {fileID: 7882319135904172152}
+--- !u!1 &5203608583563982023
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7882319135904172152}
+  m_Layer: 0
+  m_Name: SpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7882319135904172152
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5203608583563982023}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -555.9559, y: -934.66644, z: -325.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 792426292923675404}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
