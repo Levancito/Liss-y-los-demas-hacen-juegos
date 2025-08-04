@@ -75,7 +75,18 @@ public class CosmeticManager : MonoBehaviour
         SaveFile.customization2 = cosmeticsDictionary["cosmetic2"];
         SaveFile.customization3 = cosmeticsDictionary["cosmetic3"];
     }
+    public void ResetCosmetics()
+    {
+        cosmeticsDictionary["cosmetic1"] = false;
+        cosmeticsDictionary["cosmetic2"] = false;
+        cosmeticsDictionary["cosmetic3"] = false;
 
+        SaveFile.customization1 = false;
+        SaveFile.customization2 = false;
+        SaveFile.customization3 = false;
+
+        ApplyCosmetics(); 
+    }
     public void FindCosmeticObjects()
     {
         for (int i = 0; i < 3; i++) 

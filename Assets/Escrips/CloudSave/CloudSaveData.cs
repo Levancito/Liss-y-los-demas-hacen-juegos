@@ -21,7 +21,7 @@ public class CloudSaveData : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
-            await InitializeUnityServices(); 
+            await InitializeUnityServices();
         }
         else
         {
@@ -80,6 +80,8 @@ public class CloudSaveData : MonoBehaviour
             {
                 Debug.Log($"MyDataToSave value: {secondKey.Value.GetAs<string>()}");
                 JsonUtility.FromJsonOverwrite(secondKey.Value.GetAs<string>(), saveFile);
+
+                ResourceManager.Instance.LoadFromSaveFile();
             }
         }
         catch (System.Exception ex)
@@ -137,7 +139,9 @@ public class CloudSaveData : MonoBehaviour
             number = 0;
 
 
-            // Guardar el estado limpio
+            ResourceManager.Instance.ResetResources();
+            CosmeticManager.Instance.ResetCosmetics();
+
             await SaveData();
 
             Debug.Log("------------------------Cloud Data Deleted y reiniciado------------------------");

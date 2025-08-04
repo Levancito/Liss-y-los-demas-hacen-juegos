@@ -412,6 +412,7 @@ MonoBehaviour:
     customization1: 0
     customization2: 0
     customization3: 0
+    tutorialShown: 0
 --- !u!224 &252227392 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4459761891476931060, guid: e57d936423572f944a1fd26f940c9c6b, type: 3}
@@ -1212,6 +1213,7 @@ MonoBehaviour:
     customization1: 0
     customization2: 0
     customization3: 0
+    tutorialShown: 0
 --- !u!4 &653284291
 Transform:
   m_ObjectHideFlags: 0
@@ -1584,22 +1586,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 740236701}
   m_Mesh: {fileID: 289301614986012343, guid: 75b43b8f0b0ef5a478a10835d76a55e7, type: 3}
---- !u!95 &806121119 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 6605441042972547497, guid: 4ae3f3852dc79b34eb8dc70fc1d3366f, type: 3}
-  m_PrefabInstance: {fileID: 7890154286877022242}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &806121123 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3411880983447032516, guid: 4ae3f3852dc79b34eb8dc70fc1d3366f, type: 3}
-  m_PrefabInstance: {fileID: 7890154286877022242}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89a2ee7be1b790b45a17356b0bb819dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &854968817
 GameObject:
   m_ObjectHideFlags: 0
@@ -2845,7 +2831,7 @@ RectTransform:
   m_GameObject: {fileID: 1759075622}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalScale: {x: 1.907, y: 1.907, z: 1.907}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1808216823}
@@ -2853,8 +2839,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 0, y: 0.00010986}
+  m_SizeDelta: {x: 353.6, y: 160.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1759075624
 MonoBehaviour:
@@ -2944,8 +2930,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300024, guid: 56d84991286850f428b4e7df0cca7380, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2989,7 +2975,7 @@ RectTransform:
   m_GameObject: {fileID: 1808216822}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.8824, y: 2.8824, z: 2.8824}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1759075623}
@@ -3028,8 +3014,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3607,6 +3593,7 @@ MonoBehaviour:
     customization1: 0
     customization2: 0
     customization3: 0
+    tutorialShown: 0
   _pooledBullets: []
 --- !u!1 &2008305289
 GameObject:
@@ -4355,22 +4342,6 @@ PrefabInstance:
       propertyPath: joystickController
       value: 
       objectReference: {fileID: 917098704}
-    - target: {fileID: 2211915636492262492, guid: 4ae3f3852dc79b34eb8dc70fc1d3366f, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 806121119}
-    - target: {fileID: 3928401779720215474, guid: 4ae3f3852dc79b34eb8dc70fc1d3366f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.0072
-      objectReference: {fileID: 0}
-    - target: {fileID: 3928401779720215474, guid: 4ae3f3852dc79b34eb8dc70fc1d3366f, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.0024
-      objectReference: {fileID: 0}
-    - target: {fileID: 6128351288821581587, guid: 4ae3f3852dc79b34eb8dc70fc1d3366f, type: 3}
-      propertyPath: animaciones
-      value: 
-      objectReference: {fileID: 806121123}
     - target: {fileID: 6128351288821581587, guid: 4ae3f3852dc79b34eb8dc70fc1d3366f, type: 3}
       propertyPath: joystickController
       value: 
@@ -4423,8 +4394,7 @@ PrefabInstance:
       propertyPath: HealthBar
       value: 
       objectReference: {fileID: 7424987430205689903}
-    m_RemovedComponents:
-    - {fileID: 2211915636492262492, guid: 4ae3f3852dc79b34eb8dc70fc1d3366f, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

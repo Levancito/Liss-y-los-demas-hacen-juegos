@@ -615,11 +615,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: db512efd72cf3674696075572524e38b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.006369272
+      value: -0.0072
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: db512efd72cf3674696075572524e38b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.008658355
+      value: -0.0024
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: db512efd72cf3674696075572524e38b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -822,7 +822,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: db512efd72cf3674696075572524e38b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.6
+      value: -0.43
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: db512efd72cf3674696075572524e38b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -830,11 +830,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: db512efd72cf3674696075572524e38b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.70710677
+      value: 0.7071067
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: db512efd72cf3674696075572524e38b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.70710677
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: db512efd72cf3674696075572524e38b, type: 3}
       propertyPath: m_LocalRotation.y
@@ -842,19 +842,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: db512efd72cf3674696075572524e38b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: db512efd72cf3674696075572524e38b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 155.4375
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: db512efd72cf3674696075572524e38b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: db512efd72cf3674696075572524e38b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: db512efd72cf3674696075572524e38b, type: 3}
       propertyPath: m_Enabled
@@ -920,7 +920,7 @@ MonoBehaviour:
   tipoDeControl: 0
   joystickController: {fileID: 0}
   gyroController: {fileID: 5767982169077547023}
-  animaciones: {fileID: 0}
+  animaciones: {fileID: 3411880983447032516}
   _speed: 0.4
   _max: -25
 --- !u!114 &2084587106746487912

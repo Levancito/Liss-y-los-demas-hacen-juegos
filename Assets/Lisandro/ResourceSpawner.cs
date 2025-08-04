@@ -28,6 +28,8 @@ public class ResourceSpawner : MonoBehaviour
 
     public void ConfigureFromRemote(float currencyRate, float naftaRate)
     {
+        CancelInvoke(nameof(SpawnCurrency));
+        CancelInvoke(nameof(SpawnNafta));
         currencySpawnRate = currencyRate;
         naftaSpawnRate = naftaRate;
 

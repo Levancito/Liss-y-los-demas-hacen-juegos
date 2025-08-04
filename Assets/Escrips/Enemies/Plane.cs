@@ -88,6 +88,6 @@ public class Plane : Enemy
     private IEnumerator DieAfterSeconds(float seconds)
     {
         yield return new WaitForSeconds(seconds);
-        Destroy(gameObject);
+        base.Die();
     }
 }

@@ -27,14 +27,18 @@ public class M_AsyncMenu : MonoBehaviour
     private AsyncOperation operacionActual = null;
     public void CargarNivel(int NumeroDeEscena)
     {
+        if (NumeroDeEscena == 1 && ResourceManager.Instance.ActualNafta <= 0)
+        {
+            return;
+        }
+
         if (operacionActual != null && !operacionActual.isDone) return;
 
         if (controlDropdown != null)
         {
-            int selectedControlType = controlDropdown.value; 
+            int selectedControlType = controlDropdown.value;
             PlayerPrefs.SetInt("ControlType", selectedControlType);
             PlayerPrefs.Save();
-            Debug.Log("Guardado tipo de control: " + selectedControlType);
         }
 
         Time.timeScale = 1;
@@ -43,8 +47,7 @@ public class M_AsyncMenu : MonoBehaviour
         {
             CloudSaveData.Instance.saveFile.tutorialShown = true;
             CloudSaveData.Instance.Save();
-            Debug.Log("Primera vez: cargando tutorial...");
-            operacionActual = SceneManager.LoadSceneAsync("Tutorial"); 
+            operacionActual = SceneManager.LoadSceneAsync("Tutorial");
         }
         else
         {
@@ -85,7 +88,7 @@ public class M_AsyncMenu : MonoBehaviour
     {
         popupConfirmacion.Mostrar("¿Querés volver al menú principal?", () =>
         {
-            CargarNivel(0); 
+            CargarNivel(0);
         });
     }
 
@@ -99,10 +102,12 @@ public class M_AsyncMenu : MonoBehaviour
                          $"Nafta obtenida: {nafta}";
 
         popupConfirmacion.botonNo.gameObject.SetActive(false);
-        popupConfirmacion.Mostrar(mensaje, () =>
+        popupConfirmacion.Mostrar(mensaje, async () =>
         {
-            GameSessionSummary.Reset();
-            SceneManager.LoadScene(0); 
+            GameSessionSummary.GuardarValoresIniciales();
+            ResourceManager.Instance.updateResource();
+            await CloudSaveData.Instance.SaveData(); 
+            SceneManager.LoadScene(0);
         });
     }
 }

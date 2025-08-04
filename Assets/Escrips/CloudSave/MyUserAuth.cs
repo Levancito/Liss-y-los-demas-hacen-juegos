@@ -13,6 +13,8 @@ public class MyUserAuth : MonoBehaviour
 
     public event System.Action OnAuthenticationComplete;
 
+    private bool isSigningIn = false;
+
     private void Awake()
     {
         if (Instance == null)
@@ -75,12 +77,21 @@ public class MyUserAuth : MonoBehaviour
             await SignInAnonymouslyAsync();
         }
 
+        if (UnityServices.State == ServicesInitializationState.Uninitialized)
+        {
+            await UnityServices.InitializeAsync();
+        }
+
         PlayerAccountService.Instance.SignedIn += SignInWithUnityAsync;
 
     }
 
     public async Task SignInAnonymouslyAsync()
     {
+        if (isSigningIn || AuthenticationService.Instance.IsSignedIn) return;
+
+        isSigningIn = true;
+
         try
         {
             await AuthenticationService.Instance.SignInAnonymouslyAsync();
@@ -95,6 +106,10 @@ public class MyUserAuth : MonoBehaviour
         {
             Debug.LogException(ex);
             SetStatus("Anonymous sign in failed");
+        }
+        finally
+        {
+            isSigningIn = false;
         }
     }
 

@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using Unity.Services.Authentication;
 using UnityEngine;
 
 public class ResourceManager : MonoBehaviour
@@ -47,6 +49,19 @@ public class ResourceManager : MonoBehaviour
         SaveFile.fuel = ActualNafta;
         SaveFile.fuel = Mathf.Clamp(SaveFile.fuel, 0, 5);
     }
+    public void ResetResources()
+    {
+        ActualCurrency = 0;
+        ActualTuerca = 0;
+        ActualNafta = 5;
+        updateResource();
+    }
+    public void LoadFromSaveFile()
+    {
+        ActualCurrency = SaveFile.coins;
+        ActualTuerca = SaveFile.bolts;
+        ActualNafta = SaveFile.fuel;
+    }
 
     public void updateResource()
     {
@@ -66,7 +81,7 @@ public class ResourceManager : MonoBehaviour
 
             GameSessionSummary.GuardarValoresIniciales();
 
-        
+
             FindObjectOfType<M_AsyncMenu>().CargarNivel(1); 
         }
         else

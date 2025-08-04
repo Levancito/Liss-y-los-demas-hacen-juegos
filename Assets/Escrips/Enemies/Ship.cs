@@ -51,7 +51,7 @@ public class Ship : Enemy
     private IEnumerator DieAfterSeconds(float seconds)
     {
         yield return new WaitForSeconds(seconds);
-        Destroy(gameObject);
+        base.Die();
     }
 
     public override void Move()
